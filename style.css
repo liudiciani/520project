@@ -6,3 +6,8 @@ body{
 .panel{
   height: 600px;
 }
+
+#example1, #example2, #example3
+{
+display:none;
+}
