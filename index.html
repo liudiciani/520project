@@ -14,10 +14,71 @@
 
     <script>
     $(function () {
+        // Create the chart
+        Highcharts.chart('container1', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: ''
+            },
+
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of mutants'
+                }
+
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y}'
+                    }
+                }
+            },
+
+            tooltip: {
+                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of 150<br/>'
+            },
+            series: [{
+              colorByPoint: true,
+                data: [{
+                    name: 'Covered',
+                    y: 20,
+                    color: '#369D9D'
+                }, {
+                    name: 'Killed',
+                    y: 40,
+                    color: '#FF5858'
+                }, {
+                    name: 'Live',
+                    y: 30,
+                    color: '#47CE47'
+                }, {
+                    name: 'Undetected',
+                    y: 10,
+                    color: '#FFA458'
+                }]
+            }]
+
+        });
+    });
+    </script>
+
+    <script>
+    $(function () {
         $(document).ready(function () {
 
             // Build the chart
-            Highcharts.chart('container1', {
+            Highcharts.chart('container2', {
                 chart: {
                     plotBackgroundColor: null,
                     plotBorderWidth: null,
@@ -69,7 +130,7 @@
 
     <script>
     $(function () {
-    Highcharts.chart('container2', {
+    Highcharts.chart('container3', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: 0,
@@ -129,66 +190,7 @@
     });
     </script>
 
-    <script>
-    $(function () {
-        // Create the chart
-        Highcharts.chart('container3', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: ''
-            },
 
-            xAxis: {
-                type: 'category'
-            },
-            yAxis: {
-                title: {
-                    text: 'Number of mutants'
-                }
-
-            },
-            legend: {
-                enabled: false
-            },
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y}'
-                    }
-                }
-            },
-
-            tooltip: {
-                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of 150<br/>'
-            },
-            series: [{
-              colorByPoint: true,
-                data: [{
-                    name: 'Covered',
-                    y: 20,
-                    color: '#369D9D'
-                }, {
-                    name: 'Killed',
-                    y: 40,
-                    color: '#FF5858'
-                }, {
-                    name: 'Live',
-                    y: 30,
-                    color: '#47CE47'
-                }, {
-                    name: 'Undetected',
-                    y: 10,
-                    color: '#FFA458'
-                }]
-            }]
-
-        });
-    });
-    </script>
 
 
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -199,19 +201,20 @@
       <div class = "col-xs-12 col-md-4 col-lg-4">
 
         <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#pie"><img src="piepic.JPG" style="width: 50px"</img></a></li>
+          <li class = "active"><a data-toggle="tab" href="#bar"><img src="barpic.JPG" style="width: 50px"</img></a></li>
+          <li><a data-toggle="tab" href="#pie"><img src="piepic.JPG" style="width: 50px"</img></a></li>
           <li><a data-toggle="tab" href="#donut"><img src="donutpic.JPG" style="width: 50px"</img></a></li>
-          <li><a data-toggle="tab" href="#bar"><img src="barpic.JPG" style="width: 50px"</img></a></li>
+
         </ul>
 
         <div class="tab-content">
-          <div id="pie" class="tab-pane fade in active">
+          <div id="bar" class="tab-pane fade in active">
               <div id="container1"></div>
           </div>
-          <div id="donut" class="tab-pane fade">
+          <div id="pie" class="tab-pane fade">
               <div id="container2"></div>
           </div>
-          <div id="bar" class="tab-pane fade">
+          <div id="donut" class="tab-pane fade">
               <div id="container3" style="width:400px" ></div>
           </div>
         </div>
