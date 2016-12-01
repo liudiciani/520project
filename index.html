@@ -220,40 +220,43 @@
       </div>
       <div class = "col-xs-12 col-md-4 col-lg-4">
         <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#live">Live</a></li>
-          <li><a data-toggle="tab" href="#killed">Killed</a></li>
-          <li><a data-toggle="tab" href="#undetected">Undetected</a></li>
+          <li class="active"><a data-toggle="tab" href="#live" style="background-color: #47CE47">Live</a></li>
+          <li><a data-toggle="tab" href="#killed" style="background-color: #FF5858">Killed</a></li>
+          <li><a data-toggle="tab" href="#undetected" style="background-color: #FFA458">Undetected</a></li>
         </ul>
 
-        <div class="tab-content">
-          <div id="live" class="tab-pane fade in active">
+        <div class = "programs-list">
+                  <div class="tab-content">
+                    <div id="live" class="tab-pane fade in active" style="background-color: #C3FFB9">
+                      <br>
 
-            <ul class="nav nav-pills nav-stacked">
-              <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-              <li><a data-toggle="pill" href="#2">Program #2</a></li>
-              <li><a data-toggle="pill" href="#3">Program #3</a></li>
-            </ul>
-      </div>
+                      <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #2</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #3</a></li>
+                      </ul>
+                </div>
 
-      <div id="killed" class="tab-pane fade in">
+                <div id="killed" class="tab-pane fade in" style="background-color: #FFE6E6">
+                    <br>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #2</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #3</a></li>
+                  </ul>
+            </div>
 
-        <ul class="nav nav-pills nav-stacked">
-          <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-          <li><a data-toggle="pill" href="#2">Program #2</a></li>
-          <li><a data-toggle="pill" href="#3">Program #3</a></li>
-        </ul>
+            <div id="undetected" class="tab-pane fade in" style="background-color: #FFEBCC">
+                <br>
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+                <li><a data-toggle="pill" href="#2">Program #2</a></li>
+                <li><a data-toggle="pill" href="#3">Program #3</a></li>
+              </ul>
+          </div>
+
+              </div>
   </div>
-
-  <div id="undetected" class="tab-pane fade in">
-
-    <ul class="nav nav-pills nav-stacked">
-      <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-      <li><a data-toggle="pill" href="#2">Program #2</a></li>
-      <li><a data-toggle="pill" href="#3">Program #3</a></li>
-    </ul>
-</div>
-
-    </div>
 
 
   </div>
@@ -262,20 +265,28 @@
 
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
-        <div class="tab-content">
-  <div id="1" class="tab-pane fade in active">
-    <h3>Program #1</h3>
-      <img src = "1.JPG"></img>
-  </div>
-  <div id="2" class="tab-pane fade">
-    <h3>Program #2</h3>
-    <img src = "2.JPG"></img>
-  </div>
-  <div id="3" class="tab-pane fade">
-    <h3>Program #3</h3>
-    <img src = "3.JPG"></img>
-  </div>
-</div>
+        <div class="panel panel-warning">
+           <div class="panel-heading">Program Viewer</div>
+            <div class="panel-body">
+              <div id="panel">
+
+                      <div class="tab-content">
+                <div id="1" class="tab-pane fade in active">
+                  <h3>Program #1</h3>
+                    <img src = "1.JPG"></img>
+                </div>
+                <div id="2" class="tab-pane fade">
+                  <h3>Program #2</h3>
+                  <img src = "2.JPG"></img>
+                </div>
+                <div id="3" class="tab-pane fade">
+                  <h3>Program #3</h3>
+                  <img src = "3.JPG"></img>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
 
