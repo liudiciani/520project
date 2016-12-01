@@ -1,7 +1,8 @@
 body{
-  padding: 100px;
+  padding: 50px;
+  padding-top: 50px;
 }
 
-.pie .donut .bar{
-  width: 100px;
+.panel{
+  height: 600px;
 }
