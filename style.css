@@ -7,10 +7,7 @@ body{
   height: 600px;
 }
 
-#example1, #example2, #example3
-{
-display:none;
-}
+
 
 .btn-xs{
   margin: 10px;

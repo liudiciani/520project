@@ -227,56 +227,56 @@
 
         <div class="tab-content">
           <div id="live" class="tab-pane fade in active">
-            <!-- Trigger the modal with a button -->
 
-      Program #1
-      <input type="submit" class="btn btn-default btn-xs" id="submit" value = "View Code" onclick="document.getElementById('example1').style.display = 'block';"/>
-      <input type="submit" class="btn btn-link btn-xs" id="submit" value = "Hide Code" onclick="document.getElementById('example1').style.display = 'none';"/>
-
-            <br>
-
-      Program #2
-      <input type="submit" class="btn btn-default btn-xs" id="submit" value = "View Code" onclick="document.getElementById('example2').style.display = 'block';" />
-      <input type="submit" class="btn btn-link btn-xs" id="submit" value = "Hide Code" onclick="document.getElementById('example2').style.display = 'none';"/>
-
-            <br>
-
-      Program #3
-      <input type="submit" class="btn btn-default btn-xs" id="submit" value = "View Code" onclick="document.getElementById('example3').style.display = 'block';" />
-      <input type="submit" class="btn btn-link btn-xs" id="submit" value = "Hide Code" onclick="document.getElementById('example3').style.display = 'none';"/>
-
-
-
-          </div>
-          <div id="killed" class="tab-pane fade">
-            # of mutant <br>
-            # of mutant <br>
-            # of mutant <br>
-            # of mutant <br>
-            # of mutant <br>
-          </div>
-          <div id="undetected" class="tab-pane fade">
-            # of mutant <br>
-            # of mutant <br>
-            # of mutant <br>
-
-          </div>
-        </div>
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+              <li><a data-toggle="pill" href="#2">Program #2</a></li>
+              <li><a data-toggle="pill" href="#3">Program #3</a></li>
+            </ul>
       </div>
+
+      <div id="killed" class="tab-pane fade in">
+
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+          <li><a data-toggle="pill" href="#2">Program #2</a></li>
+          <li><a data-toggle="pill" href="#3">Program #3</a></li>
+        </ul>
+  </div>
+
+  <div id="undetected" class="tab-pane fade in">
+
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+      <li><a data-toggle="pill" href="#2">Program #2</a></li>
+      <li><a data-toggle="pill" href="#3">Program #3</a></li>
+    </ul>
+</div>
+
+    </div>
+
+
+  </div>
 
 
 
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
-        <div class="panel panel-warning">
-           <div class="panel-heading">Program Viewer</div>
-            <div class="panel-body">
-              <div id="panel">
-                  <img id="example1" src="1.JPG"></img>
-                  <img id="example2" src="2.JPG"></img>
-                  <img id="example3" src="3.JPG"></img>
-              </div>
-        </div>
+        <div class="tab-content">
+  <div id="1" class="tab-pane fade in active">
+    <h3>Program #1</h3>
+      <img src = "1.JPG"></img>
+  </div>
+  <div id="2" class="tab-pane fade">
+    <h3>Program #2</h3>
+    <img src = "2.JPG"></img>
+  </div>
+  <div id="3" class="tab-pane fade">
+    <h3>Program #3</h3>
+    <img src = "3.JPG"></img>
+  </div>
+</div>
+
       </div>
 
 
