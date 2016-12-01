@@ -11,3 +11,12 @@ body{
 {
 display:none;
 }
+
+.btn-xs{
+  margin: 10px;
+  margin-right: 3px;
+}
+
+.panel img{
+  width: 430px;
+}

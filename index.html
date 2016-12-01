@@ -229,9 +229,22 @@
           <div id="live" class="tab-pane fade in active">
             <!-- Trigger the modal with a button -->
 
-      <input type="submit" class="btn btn-info" id="submit" value = "View Code" onclick="document.getElementById('example1').style.display = 'block';"/><br>
-      <input type="submit" class="btn btn-info" id="submit" value = "View Code" onclick="document.getElementById('example2').style.display = 'block';" /><br>
-      <input type="submit" class="btn btn-info" id="submit" value = "View Code" onclick="document.getElementById('example3').style.display = 'block';" />
+      Program #1
+      <input type="submit" class="btn btn-default btn-xs" id="submit" value = "View Code" onclick="document.getElementById('example1').style.display = 'block';"/>
+      <input type="submit" class="btn btn-link btn-xs" id="submit" value = "Hide Code" onclick="document.getElementById('example1').style.display = 'none';"/>
+
+            <br>
+
+      Program #2
+      <input type="submit" class="btn btn-default btn-xs" id="submit" value = "View Code" onclick="document.getElementById('example2').style.display = 'block';" />
+      <input type="submit" class="btn btn-link btn-xs" id="submit" value = "Hide Code" onclick="document.getElementById('example2').style.display = 'none';"/>
+
+            <br>
+
+      Program #3
+      <input type="submit" class="btn btn-default btn-xs" id="submit" value = "View Code" onclick="document.getElementById('example3').style.display = 'block';" />
+      <input type="submit" class="btn btn-link btn-xs" id="submit" value = "Hide Code" onclick="document.getElementById('example3').style.display = 'none';"/>
+
 
 
           </div>
@@ -255,7 +268,8 @@
 
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
-        <div class="panel panel-default">
+        <div class="panel panel-warning">
+           <div class="panel-heading">Program Viewer</div>
             <div class="panel-body">
               <div id="panel">
                   <img id="example1" src="1.JPG"></img>
