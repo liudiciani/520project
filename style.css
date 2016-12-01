@@ -23,10 +23,12 @@ a{
   color: black;
 }
 
-.nav-tabs li{
-  width: 100px;
-}
+
 
 .programs-list .tab-content .tab-pane{
   height: 600px;
+}
+
+h5{
+  font-weight: bold;
 }
