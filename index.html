@@ -221,9 +221,10 @@
         </div>
 -->
   <div class = "left-wrapper"><center>
+    <!--
     <div class="panel panel-info">
       <div class="panel-heading">Stats Dashboard</div>
-        <div class="panel-body">
+        <div class="panel-body stats-dash">-->
           <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width:60%">
 
@@ -243,33 +244,56 @@
         </ul>
 
       -->
-        <a data-toggle="tab" href="#live"><div class="panel panel-success stats" id="live-stats">
-          <div class="panel-heading">Live</div>
-            <div class="panel-body"><h1>40</h1></div>
-          </div></a>
+      <!--<a data-toggle="tab" href="#all"><div class="panel panel-default stats" id="all-stats">
+        <div class="panel-heading" style="background-color: #E6E6FA">All</div>
+          <div class="panel-body"><h1>50</h1></div>
+        </div></a>-->
 
 
-        <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
-          <div class="panel-heading">Killed</div>
-            <div class="panel-body"><h1>30</h1></div>
-          </div></a>
+        <div class = "row">
+
+          <div class = "col-xs-12 col-md-4 col-lg-4">
+            <a data-toggle="tab" href="#live"><div class="panel panel-success stats" id="live-stats">
+              <div class="panel-heading" style="background-color: #C3FFB9">Live</div>
+                <div class="panel-body"><h1>20</h1></div>
+              </div></a>
+            </div>
+
+              <div class = "col-xs-12 col-md-4 col-lg-4">
+            <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
+              <div class="panel-heading" style="background-color: #FFE6E6">Killed</div>
+                <div class="panel-body"><h1>15</h1></div>
+              </div></a>
+            </div>
+
+              <div class = "col-xs-12 col-md-4 col-lg-4">
+            <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
+              <div class="panel-heading" style="background-color: #FFEBCC">Covered</div>
+                <div class="panel-body"><h1>15</h1></div>
+              </div></a>
+            </div>
 
 
-        <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
-          <div class="panel-heading">Covered</div>
-            <div class="panel-body"><h1>30</h1></div>
-          </div></a>
+        </div>
+
+        <div class="panel panel-default stats" >
+          <div class="panel-heading" style="background-color: #E6E6FA">Stats Dashboard</div>
+            <div class="panel-body runtime-stats">
+              Total time: 0.4 sec
+            </div>
+          </div>
+
 
 
 
 
       </div>
     </div>
-  </div>
-</div>
+
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
         <ul class="nav nav-pills">
+          <li><a data-toggle="tab" href="#all" style="background-color: #E6E6FA; width: 100px">All</a></li>
           <li><a data-toggle="tab" href="#live" style="background-color: #C3FFB9; width: 100px">Live</a></li>
           <li><a data-toggle="tab" href="#killed" style="background-color: #FFE6E6; width: 100px">Killed</a></li>
           <li><a data-toggle="tab" href="#covered" style="background-color: #FFEBCC; width: 100px">Covered</a></li>
@@ -277,31 +301,125 @@
 
         <div class = "programs-list">
                   <div class="tab-content">
-                    <div id="live" class="tab-pane fade in active" style="background-color: #C3FFB9">
-                      <br>
 
+                    <div id="all" class="tab-pane fade in active" style="background-color: #E6E6FA"><br>
                       <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
                         <li><a data-toggle="pill" href="#2">Program #2</a></li>
                         <li><a data-toggle="pill" href="#3">Program #3</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #4</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #5</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #6</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #7</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #8</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #9</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #10</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #11</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #12</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #13</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #14</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #15</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #16</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #17</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #18</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #19</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #20</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #21</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #22</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #23</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #24</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #25</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #26</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #27</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #28</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #29</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #30</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #31</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #32</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #33</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #34</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #35</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #36</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #37</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #38</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #39</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #40</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #41</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #42</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #43</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #44</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #45</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #46</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #47</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #48</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #49</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #50</a></li>
                       </ul>
-                </div>
+                    </div>
 
-                <div id="killed" class="tab-pane fade in" style="background-color: #FFE6E6">
-                    <br>
-                  <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-                    <li><a data-toggle="pill" href="#2">Program #2</a></li>
-                    <li><a data-toggle="pill" href="#3">Program #3</a></li>
+                    <div id="live" class="tab-pane fade in" style="background-color: #C3FFB9"><br>
+                      <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #2</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #3</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #4</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #5</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #6</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #7</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #8</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #9</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #10</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #11</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #12</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #13</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #14</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #15</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #16</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #17</a></li>
+                        <li><a data-toggle="pill" href="#3">Program #18</a></li>
+                        <li><a data-toggle="pill" href="#1">Program #19</a></li>
+                        <li><a data-toggle="pill" href="#2">Program #20</a></li>
+                      </ul>
+                    </div>
+
+                    <div id="killed" class="tab-pane fade in" style="background-color: #FFE6E6"><br>
+                      <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a data-toggle="pill" href="#1">Program #21</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #22</a></li>
+                    <li><a data-toggle="pill" href="#1">Program #23</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #24</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #25</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #26</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #27</a></li>
+                    <li><a data-toggle="pill" href="#1">Program #28</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #29</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #30</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #31</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #32</a></li>
+                    <li><a data-toggle="pill" href="#1">Program #33</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #34</a></li>
+                    <li><a data-toggle="pill" href="#3">Program #35</a></li>
+                    <li><a data-toggle="pill" href="#2">Program #36</a></li>
                   </ul>
-            </div>
+                    </div>
 
             <div id="covered" class="tab-pane fade in" style="background-color: #FFEBCC">
                 <br>
               <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-                <li><a data-toggle="pill" href="#2">Program #2</a></li>
-                <li><a data-toggle="pill" href="#3">Program #3</a></li>
+                <li class="active"><a data-toggle="pill" href="#1">Program #37</a></li>
+                <li><a data-toggle="pill" href="#1">Program #38</a></li>
+                <li><a data-toggle="pill" href="#2">Program #39</a></li>
+                <li><a data-toggle="pill" href="#2">Program #40</a></li>
+                <li><a data-toggle="pill" href="#3">Program #41</a></li>
+                <li><a data-toggle="pill" href="#1">Program #42</a></li>
+                <li><a data-toggle="pill" href="#2">Program #43</a></li>
+                <li><a data-toggle="pill" href="#3">Program #44</a></li>
+                <li><a data-toggle="pill" href="#2">Program #45</a></li>
+                <li><a data-toggle="pill" href="#3">Program #46</a></li>
+                <li><a data-toggle="pill" href="#1">Program #47</a></li>
+                <li><a data-toggle="pill" href="#2">Program #48</a></li>
+                <li><a data-toggle="pill" href="#3">Program #49</a></li>
+                <li><a data-toggle="pill" href="#2">Program #50</a></li>
               </ul>
           </div>
 

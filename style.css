@@ -5,6 +5,7 @@ body{
 
 .panel{
   height: 640px;
+
 }
 
 
@@ -52,6 +53,10 @@ a:link{
   text-decoration: none;
 }
 
+a:hover #all-stats{
+  background-color: #E6E6FA;
+}
+
 a:hover #live-stats{
   background-color: #C3FFB9;
 }
@@ -63,10 +68,29 @@ a:hover #covered-stats{
   background-color: #FFEBCC;
 }
 
+.runtime-stats{
+  text-align: left;
+
+}
+
+.stats-dash{
+  background-color: #2a2a2a;
+}
+
+
 .progress{
   height: 50px;
 }
 
 .progress-bar-success{
   background-color: #5EC359;
+}
+
+.tab-pane{
+  height: auto;
+  overflow-y:scroll;
+}
+
+body{
+  background-color: #2a2a2a;
 }
