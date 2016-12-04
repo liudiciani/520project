@@ -200,7 +200,7 @@
   <body>
     <div class = "row">
       <div class = "col-xs-12 col-md-4 col-lg-4">
-
+<!--
         <ul class="nav nav-tabs">
           <li class = "active"><a data-toggle="tab" href="#bar"><img src="barpic.JPG" style="width: 50px"</img></a></li>
           <li><a data-toggle="tab" href="#pie"><img src="piepic.JPG" style="width: 50px"</img></a></li>
@@ -219,14 +219,60 @@
               <div id="container3" ></div>
           </div>
         </div>
+-->
+  <div class = "left-wrapper"><center>
+    <div class="panel panel-info">
+      <div class="panel-heading">Stats Dashboard</div>
+        <div class="panel-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width:60%">
+
+            </div>
+            <div class="progress-bar progress-bar-striped progress-bar-danger active" role="progressbar" style="width:30%">
+
+          </div>
+          <div class="progress-bar progress-bar-striped progress-bar-warning active" role="progressbar" style="width:10%">
+
+          </div>
+        </div>
+<!--
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a data-toggle="pill" href="#live">Live</a></li>
+          <li><a data-toggle="pill" href="#killed">Killed</a></li>
+          <li><a data-toggle="pill" href="#covered">Covered</a></li>
+        </ul>
+
+      -->
+        <a data-toggle="tab" href="#live"><div class="panel panel-success stats" id="live-stats">
+          <div class="panel-heading">Live</div>
+            <div class="panel-body"><h1>40</h1></div>
+          </div></a>
+
+
+        <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
+          <div class="panel-heading">Killed</div>
+            <div class="panel-body"><h1>30</h1></div>
+          </div></a>
+
+
+        <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
+          <div class="panel-heading">Covered</div>
+            <div class="panel-body"><h1>30</h1></div>
+          </div></a>
+
+
 
 
       </div>
+    </div>
+  </div>
+</div>
+
       <div class = "col-xs-12 col-md-4 col-lg-4">
         <ul class="nav nav-pills">
-          <li class="active"><a data-toggle="tab" href="#live" style="background-color: #47CE47">Live</a></li>
-          <li><a data-toggle="tab" href="#killed" style="background-color: #FF5858">Killed</a></li>
-          <li><a data-toggle="tab" href="#undetected" style="background-color: #FFA458">Undetected</a></li>
+          <li><a data-toggle="tab" href="#live" style="background-color: #C3FFB9; width: 100px">Live</a></li>
+          <li><a data-toggle="tab" href="#killed" style="background-color: #FFE6E6; width: 100px">Killed</a></li>
+          <li><a data-toggle="tab" href="#covered" style="background-color: #FFEBCC; width: 100px">Covered</a></li>
         </ul>
 
         <div class = "programs-list">
@@ -250,7 +296,7 @@
                   </ul>
             </div>
 
-            <div id="undetected" class="tab-pane fade in" style="background-color: #FFEBCC">
+            <div id="covered" class="tab-pane fade in" style="background-color: #FFEBCC">
                 <br>
               <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
@@ -274,7 +320,7 @@
             <div class="panel-body">
               <div id="panel">
 
-                      <div class="tab-content">
+              <div class="tab-content">
                 <div id="1" class="tab-pane fade in active">
                   <h5>Program #1</h5>
                     <img src = "1.JPG"></img>

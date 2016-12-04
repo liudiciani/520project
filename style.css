@@ -19,7 +19,13 @@ body{
 }
 
 
-a{
+a:link{
+  color: black;
+}
+
+
+
+li active{
   color: black;
 }
 
@@ -31,4 +37,36 @@ a{
 
 h5{
   font-weight: bold;
+}
+
+.left-wrapper{
+  text-align:center;
+}
+
+
+.stats{
+  height: 100%;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+a:hover #live-stats{
+  background-color: #C3FFB9;
+}
+
+a:hover #killed-stats{
+  background-color: #FFE6E6;
+}
+a:hover #covered-stats{
+  background-color: #FFEBCC;
+}
+
+.progress{
+  height: 50px;
+}
+
+.progress-bar-success{
+  background-color: #5EC359;
 }
