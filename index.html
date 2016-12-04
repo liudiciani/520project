@@ -255,31 +255,34 @@
           <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#live"><div class="panel panel-success stats" id="live-stats">
               <div class="panel-heading" style="background-color: #C3FFB9">Live</div>
-                <div class="panel-body"><h1>20</h1></div>
+                <div class="panel-body">
+                  <h1>20<span style="color: gray">/50</span></h1>
+                </div>
               </div></a>
             </div>
 
               <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
               <div class="panel-heading" style="background-color: #FFE6E6">Killed</div>
-                <div class="panel-body"><h1>15</h1></div>
+                <div class="panel-body"><h1>15<span style="color: gray">/50</span></h1></div>
               </div></a>
             </div>
 
               <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
               <div class="panel-heading" style="background-color: #FFEBCC">Covered</div>
-                <div class="panel-body"><h1>15</h1></div>
+                <div class="panel-body"><h1>15<span style="color: gray">/50</span></h1></div>
               </div></a>
             </div>
 
 
         </div>
 
-        <div class="panel panel-default stats" >
-          <div class="panel-heading" style="background-color: #E6E6FA">Stats Dashboard</div>
+        <div class="panel panel-info stats" >
+          <div class="panel-heading" >Stats Dashboard</div>
             <div class="panel-body runtime-stats">
               Total time: 0.4 sec
+
             </div>
           </div>
 
@@ -292,7 +295,7 @@
 
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
           <li><a data-toggle="tab" href="#all" style="background-color: #E6E6FA; width: 100px">All</a></li>
           <li><a data-toggle="tab" href="#live" style="background-color: #C3FFB9; width: 100px">Live</a></li>
           <li><a data-toggle="tab" href="#killed" style="background-color: #FFE6E6; width: 100px">Killed</a></li>
@@ -433,7 +436,7 @@
 
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
-        <div class="panel panel-warning">
+        <div class="panel panel-info">
            <div class="panel-heading">Program Viewer</div>
             <div class="panel-body">
               <div id="panel">
