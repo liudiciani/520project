@@ -131,7 +131,7 @@
 
     <script>
     $(function () {
-    Highcharts.chart('container3', {
+      Highcharts.chart('container3', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: 0,
@@ -191,6 +191,33 @@
     });
     </script>
 
+<!--DRAG AND DROP-->
+    <script>
+    function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        linebreak = document.createElement("br");
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(linebreak);
+        ev.target.appendChild(document.getElementById(data));
+        ev.target.appendChild(linebreak);
+    }
+    </script>
+
+    <!--SORTABLE-->
+
+    <script src="jquery.sortable.js"></script>
+<script>
+    $('.sortable').sortable();
+</script>
+
 
 
 
@@ -200,6 +227,9 @@
   <body>
     <div class = "row">
       <div class = "col-xs-12 col-md-4 col-lg-4">
+
+
+
 <!--
         <ul class="nav nav-tabs">
           <li class = "active"><a data-toggle="tab" href="#bar"><img src="barpic.JPG" style="width: 50px"</img></a></li>
@@ -236,7 +266,7 @@
             <a data-toggle="tab" href="#live"><div class="panel panel-success stats" id="live-stats">
               <div class="panel-heading" style="background-color: #C3FFB9">Live</div>
                 <div class="panel-body">
-                  <h1>25<span style="color: gray">/50</span></h1>
+                  <h3>25<span style="color: gray">/50</span></h3>
                 </div>
               </div></a>
             </div>
@@ -244,14 +274,14 @@
               <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
               <div class="panel-heading" style="background-color: #FFE6E6">Killed</div>
-                <div class="panel-body"><h1>15<span style="color: gray">/50</span></h1></div>
+                <div class="panel-body"><h3>15<span style="color: gray">/50</span></h3></div>
               </div></a>
             </div>
 
               <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
               <div class="panel-heading" style="background-color: #FFEBCC">Covered</div>
-                <div class="panel-body"><h1>10<span style="color: gray">/50</span></h1></div>
+                <div class="panel-body"><h3>10<span style="color: gray">/50</span></h3></div>
               </div></a>
             </div>
 
@@ -262,6 +292,7 @@
           <div class="panel-heading" >Stats Dashboard</div>
             <div class="panel-body runtime-stats">
               Total time: 0.4 sec
+              <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
           </div>
       </div>
@@ -270,26 +301,28 @@
 <!-- TO DO: MAKE CSS STYLING OF FONT COLOR OVERRIDE THE COLORS IN THE FOLLOWING CODE -->
       <div class = "col-xs-12 col-md-4 col-lg-4">
         <ul class="nav nav-tabs">
-          <li><a data-toggle="tab" href="#all" style="border-color: #E6E6FA; width: 100px">All</a></li>
-          <li><a data-toggle="tab" href="#live" style="border-color: #C3FFB9; width: 100px;"><span style= "color: #C3FFB9">Live</span></a></li>
-          <li><a data-toggle="tab" href="#killed" style="border-color: #FFE6E6; width: 100px; color: #FFE6E6">Killed</a></li>
-          <li><a data-toggle="tab" href="#covered" style="border-color: #FFEBCC; width: 100px; color: #FFEBCC">Covered</a></li>
+          <li><a data-toggle="tab" href="#all" style="border-color: #E6E6FA; width: 80px">All</a></li>
+          <li><a data-toggle="tab" href="#live" style="border-color: #C3FFB9; width: 80px;"><span style= "color: #C3FFB9">Live</span></a></li>
+          <li><a data-toggle="tab" href="#killed" style="border-color: #FFE6E6; width: 80px; color: #FFE6E6">Killed</a></li>
+          <li><a data-toggle="tab" href="#covered" style="border-color: #FFEBCC; width: 80px; color: #FFEBCC">Covered</a></li>
         </ul>
 
         <div class = "programs-list">
                   <div class="tab-content">
 
-                    <div id="all" class="tab-pane fade in active" style="background-color: #E6E6FA"><br>
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #2</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #3</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #4</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #5</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #6</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #7</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #8</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #9</a></li>
+                    <div id="all" class="tab-pane fade in active" style="background-color: #E6E6FA" >
+                    <div id="droppable" ondrop="drop(event)" ondragover="allowDrop(event)"><br>
+
+                      <ul class="nav nav-pills nav-stacked sortable">
+                        <li class="active"><a id = "drag" draggable="true" ondragstart="drag(event)"data-toggle="pill" href="#1">Program #1</a></li>
+                        <li><a id = "drag1" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #2</a></li>
+                        <li><a id = "drag2" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #3</a></li>
+                        <li><a id = "drag3" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Program #4</a></li>
+                        <li><a id = "drag4" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #5</a></li>
+                        <li><a id = "drag5" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #6</a></li>
+                        <li><a id = "drag6" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #7</a></li>
+                        <li><a id = "drag7" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #8</a></li>
+                        <li><a id = "drag8" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Program #9</a></li>
                         <li><a data-toggle="pill" href="#2">Program #10</a></li>
                         <li><a data-toggle="pill" href="#3">Program #11</a></li>
                         <li><a data-toggle="pill" href="#2">Program #12</a></li>
@@ -331,7 +364,9 @@
                         <li><a data-toggle="pill" href="#2">Program #48</a></li>
                         <li><a data-toggle="pill" href="#3">Program #49</a></li>
                         <li><a data-toggle="pill" href="#2">Program #50</a></li>
+
                       </ul>
+                    </div>
                     </div>
 
                     <div id="live" class="tab-pane fade in" style="background-color: #C3FFB9"><br>
@@ -399,6 +434,16 @@
                     </div>
               </div>
         </div>
+
+        <div class="panel panel-danger undetectable" >
+          <div class="panel-heading" >Undetectable</div>
+            <div class="panel-body" id="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+              <ul class="nav nav-pills nav-stacked">
+
+              </ul>
+            </div>
+          </div>
+
       </div>
 
 

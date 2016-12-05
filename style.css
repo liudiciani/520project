@@ -4,8 +4,8 @@ body{
 }
 
 .panel{
-  height: 640px;
-
+  height: 600px;
+  margin-top: 10px;
 }
 
 
@@ -33,7 +33,7 @@ li active{
 
 
 .programs-list .tab-content .tab-pane{
-  height: 600px;
+  height: 500px;
 }
 
 h5{
@@ -91,20 +91,24 @@ a:hover #covered-stats{
   overflow-y:scroll;
 }
 
-.nav-tabs > li > a{
-  color: white;
-}
-
-
-.nav-tabs > li.active > a,
-  .nav-tabs > li.active > a:focus
-    .nav-tabs > li.active > a:hover{
-         color: black;
-         cursor: default;
-         background-color: #E6E6FA;
-         border-bottom-color: transparent;
-         }
-
 body{
   background-color: #2a2a2a;
+}
+
+.undetectable{
+  height: 280px;
+  overflow-y:scroll;
+}
+
+#div1{
+  border-color: white;
+  width: 500px;
+  height: 500px;
+}
+
+#droppable{
+  height: 100%;
+  width: auto;
+  display: block;
+  display:block;
 }
