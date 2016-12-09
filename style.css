@@ -3,10 +3,6 @@ body{
   padding-top: 50px;
 }
 
-.panel{
-  height: 600px;
-  margin-top: 10px;
-}
 
 
 
@@ -16,25 +12,14 @@ body{
   margin-right: 3px;
 }
 
-.panel img{
-  width: 430px;
-}
 
 a{
   color: black;
 }
 
-
-
-.programs-list .tab-content .tab-pane{
-  height: 350px;
-  background-color: #2a2a2a;
-}
-
-.programs-list .panel{
-  height: 400px;
-  background-color: #2a2a2a;
-
+.programs-list .panel-body{
+  height: 300px;
+  overflow-y: auto;
 }
 
 .programs-list a{
@@ -94,7 +79,7 @@ a:hover #covered-stats{
 
 .runtime-stats{
   text-align: left;
-  color: white;
+  color: gray;
   height: 300px;
   background-color: #2a2a2a;
   overflow-y:auto;
@@ -110,10 +95,7 @@ a:hover #covered-stats{
   background-color: #5EC359;
 }
 
-.tab-pane{
-  height: auto;
-  overflow-y:auto;
-}
+
 
 body{
   background-color: #2a2a2a;
@@ -137,12 +119,6 @@ body{
   display: block;
 }
 
-
-
-
-.pics img{
-  width: 100%;
-}
 
 table{
   width: 80%;
