@@ -129,7 +129,7 @@ table{
 }
 
 #live-ratio, #killed-ratio, #covered-ratio{
-  color: white;
+  color: gray;
   font-size: 40px;
 }
 
