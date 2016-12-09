@@ -262,28 +262,41 @@
 
         <div class = "row">
 
+          <!--
+
+          <div class = "col-xs-12 col-md-4 col-lg-4">
+              <a data-toggle="tab" href="#live"><div class = "circle" "live-stats"><div id="live-ratio">25</div><div id="total">/50</div></div></a>
+            </div>
+
+
+          -->
+
           <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#live"><div class="panel panel-success stats" id="live-stats">
-              <div class="panel-heading" style="background-color: #C3FFB9">Live</div>
+              <div class="panel-heading" style="background-color: #9bf198">Live</div>
                 <div class="panel-body">
-                  <h3>25<span style="color: gray">/50</span></h3>
+                  <div id="live-ratio">25/50</div>
                 </div>
               </div></a>
             </div>
 
-              <div class = "col-xs-12 col-md-4 col-lg-4">
+            <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
-              <div class="panel-heading" style="background-color: #FFE6E6">Killed</div>
-                <div class="panel-body"><h3>15<span style="color: gray">/50</span></h3></div>
+              <div class="panel-heading" style="background-color: #ff7f7f">Killed</div>
+                <div class="panel-body">
+                  <div id="killed-ratio">15/50</div>
               </div></a>
             </div>
+          </div>
 
               <div class = "col-xs-12 col-md-4 col-lg-4">
             <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
-              <div class="panel-heading" style="background-color: #FFEBCC">Covered</div>
-                <div class="panel-body"><h3>10<span style="color: gray">/50</span></h3></div>
+              <div class="panel-heading" style="background-color: #ffd365">Covered</div>
+                <div class="panel-body">
+                  <div id="covered-ratio">10/50</div>
               </div></a>
             </div>
+          </div>
 
 
         </div>
@@ -291,7 +304,35 @@
         <div class="panel panel-info runtime-stats" >
           <div class="panel-heading" >Stats Dashboard</div>
             <div class="panel-body">
-              Total time: 0.4 sec
+              <table>
+                <tr>
+                <td>Total time:</td><td> 1 second</td>
+                </tr>
+                <tr>
+                <td>Preprocessing time:</td><td> 0.10 seconds</td>
+              </tr>
+                <tr>
+                  <td>Analysis Time:</td><td>0.3 seconds</td>
+                </tr>
+              <tr>
+                  <td>Mutation score:</td><td>14.00% (31.82%)</td>
+              </tr>
+              <tr>
+                  <td>Mutants generated:</td><td>150</td>
+              </tr>
+              <tr>
+                  <td>Mutants covered:</td><td>66 (44%)</td>
+              </tr>
+                  <td>Mutant executions:</td><td>66</td>
+                <tr>
+                  <td>Mutants killed:</td><td>21/66</td>
+              </tr>
+              <tr>
+                  <td>Mutants live:</td><td>45/66</td>
+              </tr>
+            </table>
+
+
             </div>
           </div>
       </div>
@@ -300,16 +341,20 @@
 <!-- TO DO: MAKE CSS STYLING OF FONT COLOR OVERRIDE THE COLORS IN THE FOLLOWING CODE -->
       <div class = "col-xs-12 col-md-4 col-lg-4">
         <ul class="nav nav-tabs">
-          <li><a data-toggle="tab" href="#all" style="background-color: #E6E6FA; width: 80px">All</a></li>
-          <li><a data-toggle="tab" href="#live" style="background-color: #C3FFB9; width: 80px">Live</a></li>
-          <li><a data-toggle="tab" href="#killed" style="background-color: #FFE6E6; width: 80px">Killed</a></li>
-          <li><a data-toggle="tab" href="#covered" style="background-color: #FFEBCC; width: 80px">Covered</a></li>
+          <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 80px">All</a></li>
+          <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 80px">Live</a></li>
+          <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 80px">Killed</a></li>
+          <li><a data-toggle="tab" href="#covered" style="background-color: #ffd365; width: 80px">Covered</a></li>
         </ul>
 
         <div class = "programs-list">
+          <div class="panel panel-default">
+            <div class="panel-body">
                   <div class="tab-content">
 
-                    <div id="all" class="tab-pane fade in active" style="background-color: #E6E6FA" >
+
+
+                    <div id="all" class="tab-pane fade in active" >
                     <div id="droppable" ondrop="drop(event)" ondragover="allowDrop(event)"><br>
 
                       <ul class="nav nav-pills nav-stacked sortable">
@@ -368,7 +413,7 @@
                     </div>
                     </div>
 
-                    <div id="live" class="tab-pane fade in" style="background-color: #C3FFB9"><br>
+                    <div id="live" class="tab-pane fade in"><br>
                       <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
                         <li><a data-toggle="pill" href="#2">Program #2</a></li>
@@ -398,7 +443,7 @@
                       </ul>
                     </div>
 
-                    <div id="killed" class="tab-pane fade in" style="background-color: #FFE6E6"><br>
+                    <div id="killed" class="tab-pane fade in"><br>
                       <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a data-toggle="pill" href="#3">Program #26</a></li>
                         <li><a data-toggle="pill" href="#1">Program #27</a></li>
@@ -418,7 +463,7 @@
                       </ul>
                     </div>
 
-                    <div id="covered" class="tab-pane fade in" style="background-color: #FFEBCC"><br>
+                    <div id="covered" class="tab-pane fade in"><br>
                       <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a data-toggle="pill" href="#1">Program #42</a></li>
                         <li><a data-toggle="pill" href="#2">Program #43</a></li>
@@ -432,6 +477,7 @@
                       </ul>
                     </div>
               </div>
+            </div></div>
         </div>
 
         <div class="panel panel-danger undetectable" >
@@ -449,23 +495,101 @@
 
 
       <div class = "col-xs-12 col-md-4 col-lg-4">
-        <div class="panel panel-info">
+        <div class="panel panel-info program-viewer">
            <div class="panel-heading">Program Viewer</div>
             <div class="panel-body">
               <div id="panel">
 
-              <div class="tab-content">
+              <div class="tab-content pics">
                 <div id="1" class="tab-pane fade in active">
-                  <h5>Program #1</h5>
-                    <img src = "1.JPG"></img>
+
+                  public class FindTheMutation{ <br><br>
+                    &nbsp;public static void main(String[] args){<br><br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
+                      <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br></div>
+                      <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Dave");<br></div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;else{<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;}<br>
+                  }
+
                 </div>
                 <div id="2" class="tab-pane fade">
-                  <h5>Program #2</h5>
-                  <img src = "2.JPG"></img>
+                  public class FindTheMutation{ <br>
+                    &nbsp;&nbsp;public static void main(String[] args){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;else{<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;}<br>
+                  }
                 </div>
                 <div id="3" class="tab-pane fade">
-                  <h5>Program #3</h5>
-                  <img src = "3.JPG"></img>
+                  public class FindTheMutation{ <br>
+                    &nbsp;&nbsp;public static void main(String[] args){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;else{<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;}<br>
+                  }
                 </div>
               </div>
             </div>
