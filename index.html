@@ -78,7 +78,7 @@
       color: '#ff7f7f',
       strokeWidth: 4,
       trailWidth: 2,
-      trailColor: 'gray',
+      trailColor: '#e1bfff',
       easing: 'easeInOut',
       duration: 1400,
       text: {
@@ -112,7 +112,7 @@
       color: '#9bf198',
       strokeWidth: 4,
       trailWidth: 2,
-      trailColor: 'gray',
+      trailColor: '#e1bfff',
       easing: 'easeInOut',
       duration: 1400,
       text: {
@@ -188,9 +188,13 @@ startClock();
 
 <body>
 
+<div class = "logo">
+  <img src="claw.gif" style="height: 80px; width: 80px"></img>
+
+</div>
 
 
-
+<div class = "body-content">
   <div class = "row">
     <div class = "col-xs-12 col-md-4 col-lg-4">
 
@@ -247,6 +251,17 @@ Test run complete<br>
           </div>
           <div class = "col-xs-6 col-md-6 col-lg-6">
             <div id="covered-ratio"><span id="percentage">30</span><br>out of 50 total mutations</div>
+            <table>
+            <tr>
+            <td>Total time:</td><td> 1 second</td>
+            </tr>
+            <tr>
+            <td>Preprocessing time:</td><td> 0.10 seconds</td>
+            </tr>
+            <tr>
+            <td>Analysis Time:</td><td>0.3 seconds</td>
+            </tr>
+          </table>
           </div>
         </div>
       </div></a>
@@ -623,6 +638,6 @@ Test run complete<br>
 
 
                                               </div> <!--end row-->
-
+                                            </div>
                                             </body>
                                             </html>

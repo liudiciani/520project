@@ -1,12 +1,16 @@
-body{
-  padding: 50px;
-  padding-top: 20px;
-  padding-bottom: 0px;
+
+
+.logo{
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
-
-
-
+.body-content{
+  padding: 50px;
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
 
 .btn-xs{
   margin: 10px;
@@ -15,7 +19,7 @@ body{
 
 .button{
   width:300px;
-  height:60px;
+  height:65px;
   background-color:#66CCCC;
   text-align: center;
   font-size: 15px;
@@ -181,7 +185,13 @@ body{
 
 
 table{
-  width: 80%;
+  width: 100%;
+}
+
+a table{
+  color: #d3d3d3;
+  font-size: 11px;
+  margin-top: 30px;
 }
 
 .panel-body{
@@ -215,7 +225,7 @@ table{
 }
 
 #covered-ratio{
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .program-viewer{
@@ -226,6 +236,7 @@ table{
   background-color: #2a2a2a;
   width: 100%;
   overflow-y:auto;
+  padding-top: 50px;
 }
 
 .left-wrapper .panel{
