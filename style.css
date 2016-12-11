@@ -112,10 +112,6 @@ a:hover #covered-stats{
 }
 
 
-.progress{
-  height: 45px;
-}
-
 .progress-bar-success{
   background-color: #5EC359;
 }
@@ -148,7 +144,12 @@ body{
   position: relative;
 }
 
-
+#container0 {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
+  position: relative;
+}
 
 
 table{
@@ -200,7 +201,7 @@ table{
 }
 
 .left-wrapper .panel{
-  border-color: #2a2a2a;
+  border-color: gray;
 }
 
 
