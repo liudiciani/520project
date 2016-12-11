@@ -31,8 +31,13 @@ a{
 }
 
 .programs-list .panel-body{
-  height: 300px;
+  height: 275px;
   overflow-y: auto;
+}
+
+.undetectable{
+  color: gray;
+  font-style: italic;
 }
 
 .programs-list a{
@@ -72,7 +77,6 @@ h5{
   }
 
 hr{
-  margin: 0px;
   background-color: gray;
   width: 70%;
 }
@@ -116,6 +120,11 @@ a:hover #covered-stats{
   background-color: #5EC359;
 }
 
+.testing{
+  width: 500px;
+  height: 500px;
+}
+
 
 
 body{
@@ -131,6 +140,12 @@ body{
 
 .modal-body button{
   color: black;
+}
+#container1, #container2, #container3{
+
+  width: 200px;
+  height: 200px;
+  position: relative;
 }
 
 
@@ -155,7 +170,7 @@ table{
 
 #percentage{
   font-size: 40px;
-  
+
 }
 
 #live-ratio #percentage{
@@ -170,6 +185,10 @@ table{
   color: #ffb481;
 }
 
+#covered-ratio{
+  margin-top: 60px;
+}
+
 .program-viewer{
   font-family: consolas;
   font-size: 12px;
@@ -178,6 +197,10 @@ table{
   background-color: #2a2a2a;
   width: 100%;
   overflow-y:auto;
+}
+
+.left-wrapper .panel{
+  border-color: #2a2a2a;
 }
 
 

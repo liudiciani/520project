@@ -1,202 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Wolverine</title>
-    <link rel="icon" href="favicon-tab.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Wolverine</title>
+  <link rel="icon" href="favicon-tab.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script type="text/javascript" src="smoothscroll.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="smoothscroll.js"></script>
 
-    <script>
-    $(function () {
-        // Create the chart
-        Highcharts.chart('container1', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: ''
-            },
+  <!--SORTABLE-->
 
-            xAxis: {
-                type: 'category'
-            },
-            yAxis: {
-                title: {
-                    text: 'Number of mutants'
-                }
-
-            },
-            legend: {
-                enabled: false
-            },
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y}'
-                    }
-                }
-            },
-
-            tooltip: {
-                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of 150<br/>'
-            },
-            series: [{
-              colorByPoint: true,
-                data: [{
-                    name: 'Covered',
-                    y: 20,
-                    color: '#369D9D'
-                }, {
-                    name: 'Killed',
-                    y: 40,
-                    color: '#FF5858'
-                }, {
-                    name: 'Live',
-                    y: 30,
-                    color: '#47CE47'
-                }, {
-                    name: 'Undetected',
-                    y: 10,
-                    color: '#FFA458'
-                }]
-            }]
-
-        });
-    });
-    </script>
-
-    <script>
-    $(function () {
-        $(document).ready(function () {
-
-            // Build the chart
-            Highcharts.chart('container2', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: '' <!--title-->
-                },
-                tooltip: {
-                    pointFormat: '<b>{point.percentage}</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true
-                        },
-                        showInLegend: false
-                    }
-                },
-                series: [{
-                    colorByPoint: true,
-                    data: [{
-                        name: 'Covered',
-                        y: 20,
-                        color: '#369D9D'
-                    }, {
-                        name: 'Killed',
-                        y: 40,
-                        sliced: true,
-                        selected: true,
-                        color: '#FF5858'
-                    }, {
-                        name: 'Live',
-                        y: 30,
-                        color: '#47CE47'
-                    }, {
-                        name: 'Undetected',
-                        y: 10,
-                        color: '#FFA458'
-                    }]
-                }]
-            });
-        });
-    });
-    </script>
-
-    <script>
-    $(function () {
-      Highcharts.chart('container3', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false
-        },
-        title: {
-            text: '' <!--title-->
-        },
-        tooltip: {
-            pointFormat: '<b>{point.percentage}</b>'
-        },
-
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    distance: -50,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'black'
-                    }
-                },
-                showInLegend: false,
-                startAngle: -90,
-                endAngle: 90,
-                center: ['30%', '60%']
-
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Browser share',
-            innerSize: '50%',
-            data: [{
-                name: 'Covered',
-                y: 20,
-                color: '#369D9D'
-            }, {
-                name: 'Killed',
-                y: 40,
-                sliced: true,
-                selected: true,
-                color: '#FF5858'
-            }, {
-                name: 'Live',
-                y: 30,
-                color: '#47CE47'
-            }, {
-                name: 'Undetected',
-                y: 10,
-                color: '#FFA458'
-            }]
-        }]
-    });
-    });
-    </script>
-
-
-    <!--SORTABLE-->
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
   $( function() {
     $( "ul.droptrue" ).sortable({
       connectWith: "ul",
@@ -214,467 +34,584 @@
 
 
 
-    <link rel="stylesheet" href="style.css" type="text/css">
-  </head>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+  <script>
+  $( function() {
+    var bar = new ProgressBar.Circle(container1, {
+      color: '#ffb481',
+      strokeWidth: 4,
+      trailWidth: 1,
+      trailColor: 'gray',
+      easing: 'easeInOut',
+      duration: 1400,
+      text: {
+        autoStyleContainer: false
+      },
+      from: { color: '#ffffff', width: 4 },
+      to: { color: '#ffb481', width: 4 },
+      // Set default step function for all animate calls
+      step: function(state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
 
-  <body>
+        var value = Math.round(circle.value() * 100) + "% covered";
+        if (value === 0) {
+          circle.setText('');
+        } else {
+          circle.setText(value);
+        }
+
+      }
+    });
+    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontSize = '30px';
+    bar.animate(0.6);  // Number from 0.0 to 1.0
+  });
+  </script>
+
+  <script>
+  $( function() {
+    var bar = new ProgressBar.Circle(container2, {
+      color: '#9bf198',
+      strokeWidth: 4,
+      trailWidth: 1,
+      trailColor: 'gray',
+      easing: 'easeInOut',
+      duration: 1400,
+      text: {
+        autoStyleContainer: false
+      },
+      from: { color: '#9bf198', width: 4 },
+      to: { color: '#9bf198', width: 4 },
+      // Set default step function for all animate calls
+      step: function(state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+
+        var value = Math.round(circle.value() * 100) + "% live";
+        if (value === 0) {
+          circle.setText('');
+        } else {
+          circle.setText(value);
+        }
+
+      }
+    });
+    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontSize = '30px ';
+    bar.animate(0.2);  // Number from 0.0 to 1.0
+  });
+  </script>
+
+  <script>
+  $( function() {
+    var bar = new ProgressBar.Circle(container3, {
+      color: '#ff7f7f',
+      strokeWidth: 4,
+      trailWidth: 1,
+      trailColor: 'gray',
+      easing: 'easeInOut',
+      duration: 1400,
+      text: {
+        autoStyleContainer: false
+      },
+      from: { color: '#ffffff', width: 4 },
+      to: { color: '#ff7f7f', width: 4 },
+      // Set default step function for all animate calls
+      step: function(state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+
+        var value = Math.round(circle.value() * 100) + "% killed";
+        if (value === 0) {
+          circle.setText('');
+        } else {
+          circle.setText(value);
+        }
+
+      }
+    });
+    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontSize = '30px ';
+    bar.animate(0.8);  // Number from 0.0 to 1.0
+  });
+  </script>
+
+</head>
+
+<body>
 
 
-    <div class = "row">
-      <div class = "col-xs-12 col-md-4 col-lg-4">
+
+
+  <div class = "row">
+    <div class = "col-xs-12 col-md-4 col-lg-4">
 
 
 
-<!--
-        <ul class="nav nav-tabs">
-          <li class = "active"><a data-toggle="tab" href="#bar"><img src="barpic.JPG" style="width: 50px"</img></a></li>
-          <li><a data-toggle="tab" href="#pie"><img src="piepic.JPG" style="width: 50px"</img></a></li>
-          <li><a data-toggle="tab" href="#donut"><img src="donutpic.JPG" style="width: 50px"</img></a></li>
+      <!--
+      <ul class="nav nav-tabs">
+      <li class = "active"><a data-toggle="tab" href="#bar"><img src="barpic.JPG" style="width: 50px"</img></a></li>
+      <li><a data-toggle="tab" href="#pie"><img src="piepic.JPG" style="width: 50px"</img></a></li>
+      <li><a data-toggle="tab" href="#donut"><img src="donutpic.JPG" style="width: 50px"</img></a></li>
 
-        </ul>
+    </ul>
 
-        <div class="tab-content">
-          <div id="bar" class="tab-pane fade in active">
-              <div id="container1"></div>
-          </div>
-          <div id="pie" class="tab-pane fade">
-              <div id="container2"></div>
-          </div>
-          <div id="donut" class="tab-pane fade">
-              <div id="container3" ></div>
-          </div>
-        </div>
+    <div class="tab-content">
+    <div id="bar" class="tab-pane fade in active">
+    <div id="container1"></div>
+  </div>
+  <div id="pie" class="tab-pane fade">
+  <div id="container2"></div>
+</div>
+<div id="donut" class="tab-pane fade">
+<div id="container3" ></div>
+</div>
+</div>
 -->
 <!--
 <div id="myModal" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                Test run complete<br>
-                <br>
-                <button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">View Results</button>
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-body">
+Test run complete<br>
+<br>
+<button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">View Results</button>
 
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
 </div>
 -->
 
-  <div class = "left-wrapper"><center>
+<div class = "left-wrapper"><center>
 
 
 
 
 
-      <!--  <button data-toggle="modal" href="#myModal"  type="button" class="btn btn-lg button">Run test</button><br><br>
-      -->
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width:50%"><h4>50%</h4></div>
-            <div class="progress-bar progress-bar-striped progress-bar-danger active" role="progressbar" style="width:30%"><h4>30%</h4></div>
-          <div class="progress-bar progress-bar-striped progress-bar-warning active" role="progressbar" style="width:20%"><h4>20%</h4></div>
-        </div>
+  <!--  <button data-toggle="modal" href="#myModal"  type="button" class="btn btn-lg button">Run test</button><br><br>
+-->
 
 
-
-        <div class = "row">
-
-          <!--
-
-          <div class = "col-xs-12 col-md-4 col-lg-4">
-              <a data-toggle="tab" href="#live"><div class = "circle" "live-stats"><div id="live-ratio">25</div><div id="total">/50</div></div></a>
-            </div>
-
-
-          -->
-
-          <div class = "col-xs-12 col-md-6 col-lg-6">
-            <a data-toggle="tab" href="#live"><div class="panel panel-success stats">
-              <div class="panel-heading" style="background-color: #9bf198">Live Mutation Score</div>
-                <div class="panel-body">
-                  <div id="live-ratio"><span id="percentage">20%</span><br><hr></div>
-                  <div id="live-ratio"><span id="percentage">10</span><br>out of 50 total</div>
-                </div>
-              </div></a>
-            </div>
-
-            <div class = "col-xs-12 col-md-6 col-lg-6">
-              <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats">
-                <div class="panel-heading" style="background-color: #ff7f7f">Killed Mutation Score</div>
-                  <div class="panel-body">
-                    <div id="killed-ratio"><span id="percentage">80%</span><br><hr></div>
-                    <div id="killed-ratio"><span id="percentage">20</span><br>out of 50 total</div>
-                  </div>
-                </div></a>
-              </div>
-
-              <!--
-
-          <div class = "col-xs-12 col-md-6 col-lg-6">
-            <a data-toggle="tab" href="#live"><div class="panel panel-success stats">
-              <div class="panel-heading" style="background-color: #9bf198">Live</div>
-                <div class="panel-body">
-                  <div id="live-ratio"><span style="color: #9bf198; font-size:50px">25</span>/50</div>
-                </div>
-              </div></a>
-            </div>
-
-            <div class = "col-xs-12 col-md-6 col-lg-6">
-            <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
-              <div class="panel-heading" style="background-color: #ff7f7f">Killed</div>
-                <div class="panel-body">
-                  <div id="killed-ratio"><span style="color: #ff7f7f; font-size:50px">15</span>/50</div>
-              </div></a>
-            </div>
-          </div> -->
-
-            <!--  <div class = "col-xs-12 col-md-4 col-lg-4">
-            <a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
-              <div class="panel-heading" style="background-color: #ffd365">Covered</div>
-                <div class="panel-body">
-                  <div id="covered-ratio"><span style="color: #ffb481; font-size:50px">10</span>/50</div>
-              </div></a>
-            </div>
-          </div> -->
-
-
-        </div>
+<div class = "row">
+  <div class = "col-xs-12 col-md-12 col-lg-12">
+    <a data-toggle="tab" href="#covered"><div class="panel panel-dangre stats">
+      <div class="panel-body">
 
         <div class = "row">
-          <div class = "col-xs-12 col-md-12 col-lg-12">
-            <a data-toggle="tab" href="#covered"><div class="panel panel-dangre stats">
-              <div class="panel-heading" style="background-color: #ffb481">Covered Mutation Score</div>
-                <div class="panel-body">
-                  <div id="covered-ratio"><span id="percentage">60%</span><br><hr></div>
-                  <div id="covered-ratio"><span id="percentage">30</span><br>out of 50 total</div>
-                </div>
-              </div></a>
-            </div>
-        </div>
-
-
-
-
-        <div class="panel panel-info runtime-stats" >
-          <div class="panel-heading">Runtime Stats Dashboard</div>
-            <div class="panel-body">
-              <table>
-                <tr>
-                <td>Total time:</td><td> 1 second</td>
-                </tr>
-                <tr>
-                <td>Preprocessing time:</td><td> 0.10 seconds</td>
-              </tr>
-                <tr>
-                  <td>Analysis Time:</td><td>0.3 seconds</td>
-                </tr>
-            <!--  <tr>
-                  <td>Mutation score:</td><td>14.00% (31.82%)</td>
-              </tr>
-              <tr>
-                  <td>Mutants generated:</td><td>150</td>
-              </tr>
-              <tr>
-                  <td>Mutants covered:</td><td>66 (44%)</td>
-              </tr>
-                  <td>Mutant executions:</td><td>66</td>
-                <tr>
-                  <td>Mutants killed:</td><td>21/66</td>
-              </tr>
-              <tr>
-                  <td>Mutants live:</td><td>45/66</td>
-              </tr>-->
-            </table>
-
-
-            </div>
+          <div class = "col-xs-6 col-md-6 col-lg-6">
+            <div id="container1"></div>
           </div>
+          <div class = "col-xs-6 col-md-6 col-lg-6">
+            <div id="covered-ratio"><span id="percentage">30</span><br>out of 50 total mutations</div>
+          </div>
+        </div>
+      </div></a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" style="width:20%"><h4>20%</h4></div>
+  <div class="progress-bar progress-bar-striped progress-bar-danger active" role="progressbar" style="width:80%"><h4>80%</h4></div>
+</div>
+
+
+
+<div class = "row">
+
+  <!--
+
+  <div class = "col-xs-12 col-md-4 col-lg-4">
+  <a data-toggle="tab" href="#live"><div class = "circle" "live-stats"><div id="live-ratio">25</div><div id="total">/50</div></div></a>
+</div>
+
+
+-->
+
+<div class = "col-xs-12 col-md-6 col-lg-6">
+  <a data-toggle="tab" href="#live"><div class="panel panel-success stats">
+    <div class="panel-body">
+      <div id="container2"></div><br>
+      <div id="live-ratio"><span id="percentage">10</span><br>out of 50 total</div>
+    </div>
+  </div></a>
+</div>
+
+<div class = "col-xs-12 col-md-6 col-lg-6">
+  <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats">
+    <div class="panel-body">
+      <div id="container3"></div><br>
+      <div id="killed-ratio"><span id="percentage">20</span><br>out of 50 total</div>
+    </div>
+  </div></a>
+</div>
+
+<!--
+
+<div class = "col-xs-12 col-md-6 col-lg-6">
+<a data-toggle="tab" href="#live"><div class="panel panel-success stats">
+<div class="panel-heading" style="background-color: #9bf198">Live</div>
+<div class="panel-body">
+<div id="live-ratio"><span style="color: #9bf198; font-size:50px">25</span>/50</div>
+</div>
+</div></a>
+</div>
+
+<div class = "col-xs-12 col-md-6 col-lg-6">
+<a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
+<div class="panel-heading" style="background-color: #ff7f7f">Killed</div>
+<div class="panel-body">
+<div id="killed-ratio"><span style="color: #ff7f7f; font-size:50px">15</span>/50</div>
+</div></a>
+</div>
+</div> -->
+
+<!--  <div class = "col-xs-12 col-md-4 col-lg-4">
+<a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
+<div class="panel-heading" style="background-color: #ffd365">Covered</div>
+<div class="panel-body">
+<div id="covered-ratio"><span style="color: #ffb481; font-size:50px">10</span>/50</div>
+</div></a>
+</div>
+</div> -->
+
+
+</div>
+
+
+
+
+
+<!--
+<div class="panel panel-info runtime-stats" >
+<div class="panel-heading">Runtime Stats Dashboard</div>
+<div class="panel-body">
+<table>
+<tr>
+<td>Total time:</td><td> 1 second</td>
+</tr>
+<tr>
+<td>Preprocessing time:</td><td> 0.10 seconds</td>
+</tr>
+<tr>
+<td>Analysis Time:</td><td>0.3 seconds</td>
+</tr>
+<tr>
+<td>Mutation score:</td><td>14.00% (31.82%)</td>
+</tr>
+<tr>
+<td>Mutants generated:</td><td>150</td>
+</tr>
+<tr>
+<td>Mutants covered:</td><td>66 (44%)</td>
+</tr>
+<td>Mutant executions:</td><td>66</td>
+<tr>
+<td>Mutants killed:</td><td>21/66</td>
+</tr>
+<tr>
+<td>Mutants live:</td><td>45/66</td>
+</tr>
+</table>
+
+
+</div>
+</div> -->
+</div>
+</div>
+
+<!-- TO DO: MAKE CSS STYLING OF FONT COLOR OVERRIDE THE COLORS IN THE FOLLOWING CODE -->
+<div class = "col-xs-12 col-md-4 col-lg-4">
+  <ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 80px">All</a></li>
+    <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 80px">Live</a></li>
+    <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 80px">Killed</a></li>
+    <li><a data-toggle="tab" href="#covered" style="background-color: #ffd365; width: 80px">Covered</a></li>
+  </ul>
+
+  <div class = "programs-list">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="tab-content">
+
+
+
+          <div id="all" class="tab-pane fade in active" >
+
+            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
+              <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+              <li><a data-toggle="pill" href="#2">Program #2</a></li>
+              <li><a id = "drag2" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #3</a></li>
+              <li><a id = "drag3" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Program #4</a></li>
+              <li><a id = "drag4" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #5</a></li>
+              <li><a id = "drag5" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #6</a></li>
+              <li><a id = "drag6" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #7</a></li>
+              <li><a id = "drag7" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #8</a></li>
+              <li><a id = "drag8" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Program #9</a></li>
+              <li><a data-toggle="pill" href="#2">Program #10</a></li>
+              <li><a data-toggle="pill" href="#3">Program #11</a></li>
+              <li><a data-toggle="pill" href="#2">Program #12</a></li>
+              <li><a data-toggle="pill" href="#3">Program #13</a></li>
+              <li><a data-toggle="pill" href="#1">Program #14</a></li>
+              <li><a data-toggle="pill" href="#2">Program #15</a></li>
+              <li><a data-toggle="pill" href="#3">Program #16</a></li>
+              <li><a data-toggle="pill" href="#2">Program #17</a></li>
+              <li><a data-toggle="pill" href="#3">Program #18</a></li>
+              <li><a data-toggle="pill" href="#1">Program #19</a></li>
+              <li><a data-toggle="pill" href="#2">Program #20</a></li>
+              <li><a data-toggle="pill" href="#2">Program #21</a></li>
+              <li><a data-toggle="pill" href="#3">Program #22</a></li>
+              <li><a data-toggle="pill" href="#1">Program #23</a></li>
+              <li><a data-toggle="pill" href="#2">Program #24</a></li>
+              <li><a data-toggle="pill" href="#3">Program #25</a></li>
+              <li><a data-toggle="pill" href="#2">Program #26</a></li>
+              <li><a data-toggle="pill" href="#3">Program #27</a></li>
+              <li><a data-toggle="pill" href="#1">Program #28</a></li>
+              <li><a data-toggle="pill" href="#2">Program #29</a></li>
+              <li><a data-toggle="pill" href="#3">Program #30</a></li>
+              <li><a data-toggle="pill" href="#2">Program #31</a></li>
+              <li><a data-toggle="pill" href="#3">Program #32</a></li>
+              <li><a data-toggle="pill" href="#1">Program #33</a></li>
+              <li><a data-toggle="pill" href="#2">Program #34</a></li>
+              <li><a data-toggle="pill" href="#3">Program #35</a></li>
+              <li><a data-toggle="pill" href="#2">Program #36</a></li>
+              <li><a data-toggle="pill" href="#3">Program #37</a></li>
+              <li><a data-toggle="pill" href="#1">Program #38</a></li>
+              <li><a data-toggle="pill" href="#2">Program #39</a></li>
+              <li><a data-toggle="pill" href="#2">Program #40</a></li>
+              <li><a data-toggle="pill" href="#3">Program #41</a></li>
+              <li><a data-toggle="pill" href="#1">Program #42</a></li>
+              <li><a data-toggle="pill" href="#2">Program #43</a></li>
+              <li><a data-toggle="pill" href="#3">Program #44</a></li>
+              <li><a data-toggle="pill" href="#2">Program #45</a></li>
+              <li><a data-toggle="pill" href="#3">Program #46</a></li>
+              <li><a data-toggle="pill" href="#1">Program #47</a></li>
+              <li><a data-toggle="pill" href="#2">Program #48</a></li>
+              <li><a data-toggle="pill" href="#3">Program #49</a></li>
+              <li><a data-toggle="pill" href="#2">Program #50</a></li>
+
+            </ul>
+          </div>
+
+          <div id="live" class="tab-pane fade in">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
+              <li><a data-toggle="pill" href="#2">Program #2</a></li>
+              <li><a data-toggle="pill" href="#3">Program #3</a></li>
+              <li><a data-toggle="pill" href="#1">Program #4</a></li>
+              <li><a data-toggle="pill" href="#2">Program #5</a></li>
+              <li><a data-toggle="pill" href="#3">Program #6</a></li>
+              <li><a data-toggle="pill" href="#2">Program #7</a></li>
+              <li><a data-toggle="pill" href="#3">Program #8</a></li>
+              <li><a data-toggle="pill" href="#1">Program #9</a></li>
+              <li><a data-toggle="pill" href="#2">Program #10</a></li>
+              <li><a data-toggle="pill" href="#3">Program #11</a></li>
+              <li><a data-toggle="pill" href="#2">Program #12</a></li>
+              <li><a data-toggle="pill" href="#3">Program #13</a></li>
+              <li><a data-toggle="pill" href="#1">Program #14</a></li>
+              <li><a data-toggle="pill" href="#2">Program #15</a></li>
+              <li><a data-toggle="pill" href="#3">Program #16</a></li>
+              <li><a data-toggle="pill" href="#2">Program #17</a></li>
+              <li><a data-toggle="pill" href="#3">Program #18</a></li>
+              <li><a data-toggle="pill" href="#1">Program #19</a></li>
+              <li><a data-toggle="pill" href="#2">Program #20</a></li>
+              <li><a data-toggle="pill" href="#3">Program #21</a></li>
+              <li><a data-toggle="pill" href="#1">Program #22</a></li>
+              <li><a data-toggle="pill" href="#2">Program #23</a></li>
+              <li><a data-toggle="pill" href="#3">Program #24</a></li>
+              <li><a data-toggle="pill" href="#2">Program #25</a></li>
+            </ul>
+          </div>
+
+          <div id="killed" class="tab-pane fade in">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a data-toggle="pill" href="#3">Program #26</a></li>
+              <li><a data-toggle="pill" href="#1">Program #27</a></li>
+              <li><a data-toggle="pill" href="#2">Program #28</a></li>
+              <li><a data-toggle="pill" href="#3">Program #29</a></li>
+              <li><a data-toggle="pill" href="#2">Program #30</a></li>
+              <li><a data-toggle="pill" href="#3">Program #31</a></li>
+              <li><a data-toggle="pill" href="#1">Program #32</a></li>
+              <li><a data-toggle="pill" href="#2">Program #33</a></li>
+              <li><a data-toggle="pill" href="#3">Program #34</a></li>
+              <li><a data-toggle="pill" href="#1">Program #35</a></li>
+              <li><a data-toggle="pill" href="#2">Program #36</a></li>
+              <li><a data-toggle="pill" href="#2">Program #37</a></li>
+              <li><a data-toggle="pill" href="#3">Program #38</a></li>
+              <li><a data-toggle="pill" href="#1">Program #39</a></li>
+              <li><a data-toggle="pill" href="#1">Program #40</a></li>
+            </ul>
+          </div>
+
+          <div id="covered" class="tab-pane fade in">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a data-toggle="pill" &nbsp;&nbsp;ef="#1">Program #42</a></li>
+              <li><a data-toggle="pill" href="#2">Program #43</a></li>
+              <li><a data-toggle="pill" href="#3">Program #44</a></li>
+              <li><a data-toggle="pill" href="#2">Program #45</a></li>
+              <li><a data-toggle="pill" href="#3">Program #46</a></li>
+              <li><a data-toggle="pill" href="#1">Program #47</a></li>
+              <li><a data-toggle="pill" href="#2">Program #48</a></li>
+              <li><a data-toggle="pill" href="#3">Program #49</a></li>
+              <li><a data-toggle="pill" href="#2">Program #50</a></li>
+            </ul>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="panel panel-danger programs-list undetectable" >
+      <div class="panel-heading" >Undetectable</div>
+      <div class="panel-body ">
+        Drag and drop undetectable program names from the list above
+
+        <ul class="nav nav-pills nav-stacked droptrue" id="sortable2" >
+
+        </ul>
       </div>
     </div>
 
-<!-- TO DO: MAKE CSS STYLING OF FONT COLOR OVERRIDE THE COLORS IN THE FOLLOWING CODE -->
-      <div class = "col-xs-12 col-md-4 col-lg-4">
-        <ul class="nav nav-tabs">
-          <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 80px">All</a></li>
-          <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 80px">Live</a></li>
-          <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 80px">Killed</a></li>
-          <li><a data-toggle="tab" href="#covered" style="background-color: #ffd365; width: 80px">Covered</a></li>
-        </ul>
-
-        <div class = "programs-list">
-          <div class="panel panel-default">
-            <div class="panel-body">
-                  <div class="tab-content">
-
-
-
-                    <div id="all" class="tab-pane fade in active" ><br>
-
-                      <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
-                        <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #2</a></li>
-                        <li><a id = "drag2" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #3</a></li>
-                        <li><a id = "drag3" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Program #4</a></li>
-                        <li><a id = "drag4" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #5</a></li>
-                        <li><a id = "drag5" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #6</a></li>
-                        <li><a id = "drag6" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Program #7</a></li>
-                        <li><a id = "drag7" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Program #8</a></li>
-                        <li><a id = "drag8" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Program #9</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #10</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #11</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #12</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #13</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #14</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #15</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #16</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #17</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #18</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #19</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #20</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #21</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #22</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #23</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #24</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #25</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #26</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #27</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #28</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #29</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #30</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #31</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #32</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #33</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #34</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #35</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #36</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #37</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #38</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #39</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #40</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #41</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #42</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #43</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #44</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #45</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #46</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #47</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #48</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #49</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #50</a></li>
-
-                      </ul>
-                    </div>
-
-                    <div id="live" class="tab-pane fade in"><br>
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a data-toggle="pill" href="#1">Program #1</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #2</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #3</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #4</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #5</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #6</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #7</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #8</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #9</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #10</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #11</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #12</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #13</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #14</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #15</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #16</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #17</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #18</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #19</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #20</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #21</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #22</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #23</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #24</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #25</a></li>
-                      </ul>
-                    </div>
-
-                    <div id="killed" class="tab-pane fade in"><br>
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a data-toggle="pill" href="#3">Program #26</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #27</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #28</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #29</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #30</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #31</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #32</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #33</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #34</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #35</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #36</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #37</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #38</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #39</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #40</a></li>
-                      </ul>
-                    </div>
-
-                    <div id="covered" class="tab-pane fade in"><br>
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a data-toggle="pill" href="#1">Program #42</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #43</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #44</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #45</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #46</a></li>
-                        <li><a data-toggle="pill" href="#1">Program #47</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #48</a></li>
-                        <li><a data-toggle="pill" href="#3">Program #49</a></li>
-                        <li><a data-toggle="pill" href="#2">Program #50</a></li>
-                      </ul>
-                    </div>
-              </div>
-            </div></div>
-        </div>
-
-        <div class="panel panel-danger programs-list" >
-          <div class="panel-heading" >Undetectable</div>
-            <div class="panel-body ">
-
-              <ul class="nav nav-pills nav-stacked droptrue" id="sortable2" >
-
-              </ul>
-            </div>
-          </div>
-
-      </div>
+  </div>
 
 
 
 
-      <div class = "col-xs-12 col-md-4 col-lg-4">
-        <div class="panel panel-info ">
-           <div class="panel-heading">Program Viewer</div>
-            <div class="panel-body program-viewer">
-              <div id="panel">
+  <div class = "col-xs-12 col-md-4 col-lg-4">
+    <div class="panel panel-info ">
+      <div class="panel-heading">Program Viewer</div>
+      <div class="panel-body program-viewer">
+        <div id="panel">
 
-              <div class="tab-content pics">
-                <div id="1" class="tab-pane fade in active">
+          <div class="tab-content pics">
+            <div id="1" class="tab-pane fade in active">
 
-1                  package triangle;<br>
-2                   <br>
-3                  public class Triangle {<br>
-4                       <br>
-5                        &nbsp;public static enum Type {<br>
-6                            &nbsp;&nbsp;&nbsp;INVALID, SCALENE, EQUILATERAL, ISOSCELES<br>
-7                        &nbsp;};<br>
-8                           <br>
-9                          &nbsp;public static Type classify(int a, int b, int c) {<br>
-10                            &nbsp;&nbsp;&nbsp;if (a <= 0 || b <= 0 || c <= 0) {<br>
-11                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Type.INVALID;<br>
-12                          &nbsp;&nbsp;&nbsp;}<br>
-13                          <br>
-14                          &nbsp;&nbsp;int trian = 0;<br>
-15                          &nbsp;&nbsp;if (a == b) {<br>
-16                              &nbsp;&nbsp;&nbsp;&nbsp;trian = trian + 1;<br>
-17                          &nbsp;&nbsp;}<br>
-18                              <br>
-19                          &nbsp;&nbsp;if (a == c) {<br>
-20                              &nbsp;&nbsp;&nbsp;&nbsp;trian = trian + 2;<br>
-21                          &nbsp;&nbsp;}<br>
-22                                      <br>
-23                          &nbsp;&nbsp;if (b == c) {<br>
-24                              &nbsp;&nbsp;&nbsp;&nbsp;trian = trian + 3;<br>
-25                          &nbsp;&nbsp;}<br>
-26                                    <br>
-27                          &nbsp;&nbsp;if (trian == 0) {<br>
-28                              &nbsp;&nbsp;&nbsp;&nbsp;if (a + b <= c || a + c <= b || b + c <= a) {<br>
-29                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Type.INVALID;<br>
-30                              &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
-31                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Type.SCALENE;<br>
-32                              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-33                          &nbsp;&nbsp;}<br>
-34                          &nbsp;&nbsp;if (trian > 3) {<br>
-35                              &nbsp;&nbsp;&nbsp;&nbsp;return Type.EQUILATERAL;<br>
-36                          &nbsp;&nbsp;}<br>
-37                                    <br>
-38                          &nbsp;&nbsp;if (trian == 1 && a + b > c) {<br>
-39                              &nbsp;&nbsp;&nbsp;&nbsp;return Type.ISOSCELES;<br>
-40                          &nbsp;&nbsp;} else if (trian == 2 && a + c > b) {<br>
-41                              &nbsp;&nbsp;&nbsp;&nbsp;return Type.ISOSCELES;<br>
-42                          &nbsp;&nbsp;} else if (trian == 3 && b + c > a) {<br>
-43                            &nbsp;&nbsp;&nbsp;return Type.ISOSCELES;<br>
-44                          &nbsp;&nbsp;}<br>
-45                          &nbsp;&nbsp;return Type.INVALID;<br>
-46                      &nbsp;}<br>
-47                  }<br>
+              1                  package triangle;<br>
+              2                   <br>
+              3                  public class Triangle {<br>
+                4                       <br>
+                5                        &nbsp;public static enum Type {<br>
+                  6                            &nbsp;&nbsp;&nbsp;INVALID, SCALENE, EQUILATERAL, ISOSCELES<br>
+                  7                        &nbsp;};<br>
+                  8                           <br>
+                  9                          &nbsp;public static Type classify(int a, int b, int c) {<br>
+                    10                            &nbsp;&nbsp;&nbsp;if (a <= 0 || b <= 0 || c <= 0) {<br>
+                      11                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Type.INVALID;<br>
+                      12                          &nbsp;&nbsp;&nbsp;}<br>
+                      13                          <br>
+                      14                          &nbsp;&nbsp;int trian = 0;<br>
+                      15                          &nbsp;&nbsp;if (a == b) {<br>
+                        16                              &nbsp;&nbsp;&nbsp;&nbsp;trian = trian + 1;<br>
+                        17                          &nbsp;&nbsp;}<br>
+                        18                              <br>
+                        19                          &nbsp;&nbsp;if (a == c) {<br>
+                          20                              &nbsp;&nbsp;&nbsp;&nbsp;trian = trian + 2;<br>
+                          21                          &nbsp;&nbsp;}<br>
+                          22                                      <br>
+                          23                          &nbsp;&nbsp;if (b == c) {<br>
+                            24                              &nbsp;&nbsp;&nbsp;&nbsp;trian = trian + 3;<br>
+                            25                          &nbsp;&nbsp;}<br>
+                            26                                    <br>
+                            27                          &nbsp;&nbsp;if (trian == 0) {<br>
+                              28                              &nbsp;&nbsp;&nbsp;&nbsp;if (a + b <= c || a + c <= b || b + c <= a) {<br>
+                                29                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Type.INVALID;<br>
+                                30                              &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                  31                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return Type.SCALENE;<br>
+                                  32                              &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                  33                          &nbsp;&nbsp;}<br>
+                                  34                          &nbsp;&nbsp;if (trian > 3) {<br>
+                                    35                              &nbsp;&nbsp;&nbsp;&nbsp;return Type.EQUILATERAL;<br>
+                                    36                          &nbsp;&nbsp;}<br>
+                                    37                                    <br>
+                                    38                          &nbsp;&nbsp;if (trian == 1 && a + b > c) {<br>
+                                      39                              &nbsp;&nbsp;&nbsp;&nbsp;return Type.ISOSCELES;<br>
+                                      40                          &nbsp;&nbsp;} else if (trian == 2 && a + c > b) {<br>
+                                        41                              &nbsp;&nbsp;&nbsp;&nbsp;return Type.ISOSCELES;<br>
+                                        42                          &nbsp;&nbsp;} else if (trian == 3 && b + c > a) {<br>
+                                          43                            &nbsp;&nbsp;&nbsp;return Type.ISOSCELES;<br>
+                                          44                          &nbsp;&nbsp;}<br>
+                                          45                          &nbsp;&nbsp;return Type.INVALID;<br>
+                                          46                      &nbsp;}<br>
+                                          47                  }<br>
 
-                </div>
-                <div id="2" class="tab-pane fade">
-                  public class FindTheMutation{ <br><br>
-                    &nbsp;&nbsp;public static void main(String[] args){<br><br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
-                      <br>
-                      <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br></div>
-                      <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = true;<br></div>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
-                      <br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
-                      <br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                      <br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                    &nbsp;&nbsp;}<br>
-                  }
-                </div>
-                <div id="3" class="tab-pane fade">
-                  public class FindTheMutation{ <br><br>
-                    &nbsp;&nbsp;public static void main(String[] args){<br><br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
-                      <br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
-                      <br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
-                      <br>
-                      <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br></div>
-                      <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == false){<br></div>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                      <br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                    &nbsp;&nbsp;}<br>
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                                        </div>
+                                        <div id="2" class="tab-pane fade">
+                                          public class FindTheMutation{ <br><br>
+                                            &nbsp;&nbsp;public static void main(String[] args){<br><br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
+                                              <br>
+                                              <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br></div>
+                                              <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = true;<br></div>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
+                                              <br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
+                                              <br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{<br>
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                  <br>
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                    &nbsp;&nbsp;}<br>
+                                                  }
+                                                </div>
+                                                <div id="3" class="tab-pane fade">
+                                                  public class FindTheMutation{ <br><br>
+                                                    &nbsp;&nbsp;public static void main(String[] args){<br><br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
+                                                      <br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
+                                                      <br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
+                                                      <br>
+                                                      <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br></div>
+                                                        <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == false){<br></div>
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                            <br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
+                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                              &nbsp;&nbsp;}<br>
+                                                            }
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
 
-      </div>
-
-
+                                                </div>
 
 
-    </div> <!--end row-->
 
-  </body>
-</html>
+
+                                              </div> <!--end row-->
+
+                                            </body>
+                                            </html>
