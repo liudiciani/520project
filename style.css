@@ -50,11 +50,17 @@ a{
 .programs-list .panel-body{
   height: 280px;
   overflow-y: auto;
+
 }
 
-#summaryModal{
-  text-align: center;
+.summary td{
+  padding-bottom: 10px;
 }
+
+#headers{
+  color: white;
+}
+
 
 .summary a{
   color: white;
@@ -64,12 +70,17 @@ a{
   color: #d3d3d3;
 }
 
+.summary #modal-body{
+  color: #d3d3d3;
+}
+
 .summary{
   text-align: center;
 }
 
 .summary table{
   width: 100%;
+  color: #d3d3d3;
 }
 
 .unkillable{
@@ -143,8 +154,10 @@ h5{
 
 }
 
+
 .stats{
   height: 100%;
+  width: 100%;
   }
 
 hr{
@@ -201,6 +214,13 @@ body{
   background-color: #2a2a2a;
 }
 
+.test .modal{
+  padding-top: 300px;
+}
+
+.summary .modal{
+  padding-top: 100px;
+}
 
 .modal-body{
   background: rgba(0,0,0, 0.8);
