@@ -225,10 +225,17 @@ startClock();
 
 <body>
 
+
+  <div class = "top-bar">
+    Package: <u>example</u><br>
+    Classes: <u>FindTheMutation.java</u>
+  </div>
+
 <div class = "logo">
   <img src="claw.gif" style="height: 80px; width: 80px"></img>
 
 </div>
+
 
 
 <div class = "body-content">
@@ -258,7 +265,7 @@ Test run complete<br>
 
 <div class = "row">
   <div class = "col-xs-12 col-md-12 col-lg-12">
-    <a data-toggle="tab" href="#covered"><div class="panel panel-dangre stats">
+    <a data-toggle="tab" href="#uncovered"><div class="panel panel-dangre stats">
       <div class="panel-body">
 
         <div class = "row">
@@ -390,10 +397,10 @@ Test run complete<br>
 <!-- TO DO: MAKE CSS STYLING OF FONT COLOR OVERRIDE THE COLORS IN THE FOLLOWING CODE -->
 <div class = "col-xs-12 col-md-4 col-lg-4">
   <ul class="nav nav-tabs">
-    <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 80px">All</a></li>
-    <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 80px">Killed</a></li>
-    <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 80px">Live</a></li>
-    <li><a data-toggle="tab" href="#covered" style="background-color: #ffd365; width: 80px">Covered</a></li>
+    <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 90px">All</a></li>
+    <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 90px">Killed</a></li>
+    <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 90px">Live</a></li>
+    <li><a data-toggle="tab" href="#covered" style="background-color: #d3d3d3; width: 100px">Uncovered</a></li>
   </ul>
 
   <div class = "programs-list">
@@ -528,16 +535,46 @@ Test run complete<br>
       </div></div>
     </div>
 
-    <div class="panel panel-danger programs-list undetectable" >
-      <div class="panel-heading" >Undetectable</div>
+    <div class="panel panel-danger programs-list unkillable" >
+      <div class="panel-heading" >Unkillable</div>
       <div class="panel-body ">
-        <i>Drag and drop undetectable program names from the list above</i>
+        <i>Drag and drop unkillable program names from the list above</i>
 
         <ul class="nav nav-pills nav-stacked droptrue" id="sortable2" >
 
         </ul>
       </div>
     </div>
+
+    <!--<div class = "summary">
+      <div id="summaryModal" class="modal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-body">
+      Summary of Mutation Data<br>
+      <br>
+      <table>
+      <tr>
+      <td>All</td><td>Covered</td><td>Live</td><td>Killed</td><td></td>
+      </tr>
+      <tr>
+      <td>Program #1</td><td>Program #4</td><td>Program #7</td><td>Program #10</td><td></td>
+      </tr>
+      <tr>
+      <td>Program #2</td><td>Program #5</td><td>Proram #8</td><td>Program #11</td><td></td>
+      </tr>
+      <tr>
+      <td>Program #3</td><td>Program #6</td><td>Program #9</td><td>Program #12</td><td></td>
+      </tr>
+      </table>
+      <button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">Close</button>
+
+      </div>
+      </div>
+      </div>
+      </div>
+        <a data-toggle="modal" href="#summaryModal"> View Summary </button><br><br>
+      </div>-->
 
   </div>
 
@@ -552,6 +589,10 @@ Test run complete<br>
 
           <div class="tab-content pics">
             <div id="1" class="tab-pane fade in active">
+              <div class = "class-info">
+                Package: <u>example</u><br>
+                Class: <u>FindTheMutation.java</u><br><br>
+              </div>
 
               public class FindTheMutation{ <br>
                                     <br>
@@ -578,7 +619,7 @@ Test run complete<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                     <br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;while(true){<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                   &nbsp;}<br>
@@ -607,7 +648,7 @@ Test run complete<br>
                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                                   <br>
                                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(true){<br>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                                     &nbsp;&nbsp;}<br>
@@ -637,7 +678,7 @@ Test run complete<br>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                                             <br>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(yes){<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(true){<br>
                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                                               &nbsp;&nbsp;}<br>
