@@ -144,48 +144,77 @@
 
 
 
-  <script src="data.js"></script>
+  <script src="runtimeData.js"></script>
   <script>
-    var livePercentage = data.mutantsLive/data.mutantsTotal;
-    var killedPercentage = data.mutantsKilled/data.mutantsTotal;
-    var coveredPercentage = data.mutantsCovered/data.mutantsTotal;
+  /*************************  RUNTIME DATA  ************************/
+    var livePercentage = runtimeData.mutantsLive/runtimeData.mutantsTotal;
+    var killedPercentage = runtimeData.mutantsKilled/runtimeData.mutantsTotal;
+    var coveredPercentage = runtimeData.mutantsCovered/runtimeData.mutantsTotal;
 
     window.onload = (function() {
       var totals = document.getElementsByClassName('total');
       for(var i = 0, length = totals.length; i < length; i++) {
-        totals[i].innerHTML = data.mutantsTotal;
+        totals[i].innerHTML = runtimeData.mutantsTotal;
       }
-      document.getElementById('coveredData').innerHTML = data.mutantsCovered;
-      document.getElementById('killedData').innerHTML = data.mutantsKilled;
-      document.getElementById('liveData').innerHTML = data.mutantsLive;
-      document.getElementById('runtimePrep').innerHTML = data.runtimePrep;
-      document.getElementById('runtimeAnalysis').innerHTML = data.runtimeAnalysis;
+      document.getElementById('coveredData').innerHTML = runtimeData.mutantsCovered;
+      document.getElementById('killedData').innerHTML = runtimeData.mutantsKilled;
+      document.getElementById('liveData').innerHTML = runtimeData.mutantsLive;
+      document.getElementById('runtimePrep').innerHTML = runtimeData.runtimePrep;
+      document.getElementById('runtimeAnalysis').innerHTML = runtimeData.runtimeAnalysis;
     });
+
+    </script>
+
+    <script src="mutants.js"></script>
+
+    <script>
+
+    /*************************  MUTANTS ************************/
+
+  /*  <div id="killed" class="tab-pane fade in">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a data-toggle="pill" href="#3">Mutant #26</a></li>
+        <li><a data-toggle="pill" href="#1">Placeholder</a></li>
+      </ul>
+    </div>
+
+
+    <div class="tab-content pics">
+      <div id="1" class="tab-pane fade in active">
+
+
+      */
+
+
+    window.onload = (function() {
+    for(var k of killedMutants){
+      //add to program viewer
+            var d = document.createElement("div");
+            d.setAttribute("id", "mutant"+k.num);
+            d.setAttribute("class", "tab-pane fade in");
+            d.innerHTML = k.mutation;
+            document.getElementById('diff').appendChild(d);
+
+
+      //document.getElementById('diff').append("<div id='hi' class='tab-pane fade in active'>IT WORKS</div>");
+      //add pill
+      $("#killed ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
+    }
+
+    });
+
+
+
+
+
+
+
+
   </script>
 
 
 
-          <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
-  <!--    <script src="d3.min.js?v=3.2.8"></script>
-          <script>
-              d3.text("summary.csv", function(data) {
-                  var parsedCSV = d3.csv.parseRows(data);
 
-                  var container = d3.select("body")
-                      .append("table")
-
-                      .selectAll("tr")
-                          .data(parsedCSV).enter()
-                          .append("tr")
-
-                      .selectAll("td")
-                          .data(function(d) { return d; }).enter()
-                          .append("td")
-                          .text(function(d) { return d; });
-              });
-          </script>
-
--->
 
 
 </head>
@@ -258,7 +287,6 @@ Test run complete<br>
 </div>
 
 
-<!--<div id="container0"></div><br>-->
 
 
 <div class = "row">
@@ -286,77 +314,12 @@ Test run complete<br>
 </div>
 
 
-<!--
 
-<div class = "col-xs-12 col-md-6 col-lg-6">
-<a data-toggle="tab" href="#live"><div class="panel panel-success stats">
-<div class="panel-heading" style="background-color: #9bf198">Live</div>
-<div class="panel-body">
-<div id="live-ratio"><span style="color: #9bf198; font-size:50px">25</span>/50</div>
-</div>
-</div></a>
-</div>
-
-<div class = "col-xs-12 col-md-6 col-lg-6">
-<a data-toggle="tab" href="#killed"><div class="panel panel-danger stats" id="killed-stats">
-<div class="panel-heading" style="background-color: #ff7f7f">Killed</div>
-<div class="panel-body">
-<div id="killed-ratio"><span style="color: #ff7f7f; font-size:50px">15</span>/50</div>
-</div></a>
-</div>
-</div> -->
-
-<!--  <div class = "col-xs-12 col-md-4 col-lg-4">
-<a data-toggle="tab" href="#covered"><div class="panel panel-warning stats" id="covered-stats">
-<div class="panel-heading" style="background-color: #ffd365">Covered</div>
-<div class="panel-body">
-<div id="covered-ratio"><span style="color: #ffb481; font-size:50px">10</span>/50</div>
-</div></a>
-</div>
-</div> -->
 
 
 </div>
 
 
-
-
-
-<!--
-<div class="panel panel-info runtime-stats" >
-<div class="panel-heading">Runtime Stats Dashboard</div>
-<div class="panel-body">
-<table>
-<tr>
-<td>Total time:</td><td> 1 second</td>
-</tr>
-<tr>
-<td>Preprocessing time:</td><td> 0.10 seconds</td>
-</tr>
-<tr>
-<td>Analysis Time:</td><td>0.3 seconds</td>
-</tr>
-<tr>
-<td>Mutation score:</td><td>14.00% (31.82%)</td>
-</tr>
-<tr>
-<td>Mutants generated:</td><td>150</td>
-</tr>
-<tr>
-<td>Mutants covered:</td><td>66 (44%)</td>
-</tr>
-<td>Mutant executions:</td><td>66</td>
-<tr>
-<td>Mutants killed:</td><td>21/66</td>
-</tr>
-<tr>
-<td>Mutants live:</td><td>45/66</td>
-</tr>
-</table>
-
-
-</div>
-</div> -->
 </div>
 </div>
 
@@ -376,7 +339,7 @@ Test run complete<br>
 
 
 
-          <div id="all" class="tab-pane fade in active" >
+          <div id="all"  class="tab-pane fade in active" >
 
             <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
               <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
@@ -436,20 +399,7 @@ Test run complete<br>
           <div id="killed" class="tab-pane fade in">
             <ul class="nav nav-pills nav-stacked">
               <li class="active"><a data-toggle="pill" href="#3">Mutant #26</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #27</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #28</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #29</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #30</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #31</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #32</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #33</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #34</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #35</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #36</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #37</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #38</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #39</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #40</a></li>
+              <li><a data-toggle="pill" href="#1">Placeholder</a></li>
             </ul>
           </div>
 
@@ -575,8 +525,8 @@ Test run complete<br>
       <div class="panel-body program-viewer">
         <div id="panel">
 
-          <div class="tab-content pics">
-            <div id="1" class="tab-pane fade in active">
+          <div class="tab-content" id = "diff">
+          <!--  <div id="1" class="tab-pane fade in active">
               <div class = "class-info">
                 Package: <u>example</u><br>
                 Class: <u>FindTheMutation.java</u><br><br>
@@ -680,7 +630,7 @@ Test run complete<br>
                                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                                               &nbsp;&nbsp;}<br>
                                                             }
-                                                          </div>
+                                                          </div>-->
                                                         </div>
                                                       </div>
                                                     </div>

@@ -1,4 +1,4 @@
-var data = {
+var runtimeData = {
     mutantsTotal:"50",
     mutantsCovered: "30",
     mutantsKilled: "20",
