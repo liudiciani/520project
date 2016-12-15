@@ -96,41 +96,28 @@ a{
 }
 
 
-
 #all .nav-pills > li.active > a {
     background-color: #e1bfff;
-      color: black;
+    color: black;
 }
 
 
 #live .nav-pills > li.active > a {
     background-color: #9bf198;
-      color: black;
+    color: black;
 }
 #killed .nav-pills > li.active > a {
    background-color: #ff7f7f;
-      color: black;
+   color: black;
 }
 #uncovered .nav-pills > li.active > a {
     background-color: gray;
-      color: black;
+    color: black;
 }
 
-.container{
-  position: fixed;
-inline: true,
-font-size: 0px,
-font-family: "Helvetica, Arial, sans-serif",
-text-color: null,
-lines: 1,
-line: 0,
-symbol: "",
-margin: 0,
-color: "rgb(55,123,181)",
-background: "rgba(0,0,0,0.1)",
-size: $obj.outerWidth(),
-fill: "5px",
-range: [0, 100]
+#unkillable .nav-pills > li.active > a {
+    background-color: gray;
+    color: black;
 }
 
 
@@ -140,22 +127,6 @@ h5{
 
 .left-wrapper{
   text-align:center;
-}
-
-#container{
-"font-size": 40px,
-"font-family": "Helvetica, Arial, sans-serif",
-"text-color": null,
-"lines": 1,
-"line": 0,
-"symbol": "",
-"margin": 0,
-"color": "rgb(55,123,181)",
-"background": "rgba(0,0,0,0.1)",
-"size": $obj.outerWidth(),
-"fill": "5px",
-"range": [0, 100]
-
 }
 
 
@@ -168,24 +139,17 @@ hr{
   background-color: #d3d3d3;
   width: 70%;
 }
+
 a:link{
   text-decoration: none;
 }
 
 
- a:hover #live-stats{
-  background-color: #9bf198;
+ a:hover #live-stats, a:hover #killed-stats{
+  background-color: #343434;
   color: black;
 }
 
-a:hover #killed-stats{
-  background-color: #ff7f7f;
-  color: black;
-}
-a:hover #covered-stats{
-  background-color: #ffb481;
-  color: black;
-}
 
 .ui-state-highlight{
   height: 45px;
@@ -203,16 +167,10 @@ a:hover #covered-stats{
 }
 
 
-.progress-bar-success{
-  background-color: #5EC359;
-}
-
 .testing{
   width: 500px;
   height: 500px;
 }
-
-
 
 body{
   background-color: #2a2a2a;
@@ -235,13 +193,12 @@ body{
 .modal-body button{
   color: black;
 }
-#container1, #container2, #container3{
 
+#container1, #container2, #container3{
   width: 200px;
   height: 200px;
   position: relative;
 }
-
 
 
 table{
@@ -262,6 +219,7 @@ a table{
   height: 250px;
   background-color: #2a2a2a;
 }
+
 #live-ratio, #killed-ratio, #covered-ratio{
   color: #d3d3d3;
   font-size: 15px;
@@ -288,7 +246,7 @@ a table{
   margin-top: 20px;
 }
 
-.program-viewer{
+.mutant-viewer{
   font-family: consolas;
   font-size: 12px;
   color: #d3d3d3;
@@ -322,53 +280,3 @@ a table{
 a{
   color: black;
 }
-
-
-
-/*
-.circle{
-  height: 100px;
-  width: 100px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  background: yellow;
-}*/
-
-/*
-.live-circle{
-  height: 200px;
-  width: 200px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  background: #9bf198;
-}
-
-.killed-circle{
-  height: 200px;
-  width: 200px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  background: #ff7f7f;
-}
-
-.covered-circle{
-  height: 200px;
-  width: 200px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  background: #ffb481;
-}
-
-a:hover .live-circle, a:hover .killed-circle, a:hover .covered-circle{
-  background-color: #2a2a2a;
-  border-color: red;
-}
-*/
