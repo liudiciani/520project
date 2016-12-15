@@ -13,8 +13,9 @@
   <script type="text/javascript" src="smoothscroll.js"></script>
 
 
-  <!--SORTABLE-->
-
+  <!--...............................................................-->
+  <!--.......................SORTABLE PLUGIN.........................-->
+  <!--...............................................................-->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
@@ -33,6 +34,9 @@
   </script>
 
 
+<!--...............................................................-->
+<!--.......................PROGRESS CIRCLES........................-->
+<!--...............................................................-->
 
 
   <link rel="stylesheet" href="style.css" type="text/css">
@@ -142,9 +146,13 @@
   </script>
 
 
-
+  <!--...............................................................-->
+  <!--.......................DYNAMIC DATA............................-->
+  <!--...............................................................-->
 
   <script src="runtimeData.js"></script>
+  <script src="mutants.js"></script>
+
   <script>
   /*************************  RUNTIME DATA  ************************/
     var livePercentage = runtimeData.mutantsLive/runtimeData.mutantsTotal;
@@ -161,419 +169,275 @@
       document.getElementById('liveData').innerHTML = runtimeData.mutantsLive;
       document.getElementById('runtimePrep').innerHTML = runtimeData.runtimePrep;
       document.getElementById('runtimeAnalysis').innerHTML = runtimeData.runtimeAnalysis;
+
+/*************************  MUTATION DATA****** ************************/
+
+      //killed mutant data
+      for(var k of killedMutants){
+        //add to program viewer
+        var d = document.createElement("div");
+        d.setAttribute("id", "mutant"+k.num);
+        d.setAttribute("class", "tab-pane fade in");
+        d.innerHTML = k.mutation;
+        document.getElementById('diff').appendChild(d);
+
+      //add pills
+        $("#killed ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
+        $("#all ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
+      }
+
+      //live mutant data
+      for(var l of liveMutants){
+        //add to program viewer
+        var d = document.createElement("div");
+        d.setAttribute("id", "mutant"+l.num);
+        d.setAttribute("class", "tab-pane fade in");
+        d.innerHTML = l.mutation;
+        document.getElementById('diff').appendChild(d);
+
+      //add pills
+        $("#live ul").append("<li><a data-toggle='pill' href='#mutant" + l.num + "'>" + l.num + "</a></li>");
+        $("#all ul").append("<li><a data-toggle='pill' href='#mutant" +l.num + "'>" + l.num + "</a></li>");
+      }
+
+      //uncovered mutant data
+      for(var u of uncoveredMutants){
+        //add to program viewer
+        var d = document.createElement("div");
+        d.setAttribute("id", "mutant"+u.num);
+        d.setAttribute("class", "tab-pane fade in");
+        d.innerHTML = u.mutation;
+        document.getElementById('diff').appendChild(d);
+
+      //add pills
+        $("#uncovered ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
+        $("#all ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
+      }
     });
-
-    </script>
-
-    <script src="mutants.js"></script>
-
-    <script>
-
-    /*************************  MUTANTS ************************/
-
-
-
-    window.onload = (function() {
-    for(var k of killedMutants){
-      //add to program viewer
-      var d = document.createElement("div");
-      d.setAttribute("id", "mutant"+k.num);
-      d.setAttribute("class", "tab-pane fade in");
-      d.innerHTML = k.mutation;
-      document.getElementById('diff').appendChild(d);
-
-    //add pill
-      $("#killed ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
-      $("#all ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
-    }
-
-    for(var l of liveMutants){
-      //add to program viewer
-      var d = document.createElement("div");
-      d.setAttribute("id", "mutant"+l.num);
-      d.setAttribute("class", "tab-pane fade in");
-      d.innerHTML = l.mutation;
-      document.getElementById('diff').appendChild(d);
-
-    //add pill
-      $("#live ul").append("<li><a data-toggle='pill' href='#mutant" + l.num + "'>" + l.num + "</a></li>");
-      $("#all ul").append("<li><a data-toggle='pill' href='#mutant" +l.num + "'>" + l.num + "</a></li>");
-    }
-
-    for(var u of uncoveredMutants){
-      //add to program viewer
-      var d = document.createElement("div");
-      d.setAttribute("id", "mutant"+u.num);
-      d.setAttribute("class", "tab-pane fade in");
-      d.innerHTML = u.mutation;
-      document.getElementById('diff').appendChild(d);
-
-    //add pill
-      $("#uncovered ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
-      $("#all ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
-    }
-
-    });
-
-
-
-
-
-
-
-
-
 
   </script>
-
-
-
-
-
-
 </head>
 
 <body>
 
-
-
-
+<!-- Top bar displaying packages & filenames -->
   <div class = "top-bar">
     Package: <u>example</u><br>
     Classes: <u>FindTheMutation.java</u>
+    <!-- TODO: Make this data dynamic -->
   </div>
 
-<div class = "logo">
-  <img src="claw.gif" style="height: 80px; width: 80px"></img>
-
-</div>
-
-
-
-<div class = "body-content">
-  <div class = "row">
-    <div class = "col-xs-12 col-md-4 col-lg-4">
-
-<div class = "test">
-<div id="myModal" class="modal">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-body">
-Test run complete<br>
-<br>
-<button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">View Results</button>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class = "left-wrapper"><center>
-
-  <button data-toggle="modal" href="#myModal"  type="button" class="btn btn-lg button">Run test</button><br><br>
-
-
-<div class = "row">
-  <div class = "col-xs-12 col-md-12 col-lg-12">
-    <a data-toggle="tab" href="#uncovered"><div class="panel panel-dangre stats">
-      <div class="panel-body">
-
-        <div class = "row">
-          <div class = "col-xs-6 col-md-6 col-lg-6">
-            <div id="container1"></div>
-          </div>
-          <div class = "col-xs-6 col-md-6 col-lg-6">
-            <div id="covered-ratio"><span id="percentage"><span id = "coveredData"></span></span><br>out of   <div class = "total"> </div> total mutations</div>
-            <table>
-            <tr>
-            <td>Preprocessing time:</td><td><span id = "runtimePrep"></span> seconds</td>
-            </tr>
-            <tr>
-            <td>Analysis Time:</td><td><span id = "runtimeAnalysis"></span> seconds</td>
-            </tr>
-          </table>
-          </div>
-        </div>
-      </div></a>
-    </div>
+<!-- Logo in top left corner -->
+  <div class = "logo">
+    <img src="claw.gif" style="height: 80px; width: 80px"></img>
   </div>
-</div>
 
+<!-- BEGIN DASHBOARD CONTENT -->
+  <div class = "body-content">
+    <div class = "row">
+      <div class = "col-xs-12 col-md-4 col-lg-4">
 
-
-
-<div class = "row">
-
-
-
-
-<div class = "col-xs-12 col-md-6 col-lg-6">
-  <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats">
-    <div class="panel-body">
-      <div id="container2"></div><br>
-      <div id="killed-ratio"><span id="percentage">  <span id = "killedData"></span>
-      </span><br>out of <div class = "total"></div> total mutations</div>
-    </div>
-  </div></a>
-</div>
-
-<div class = "col-xs-12 col-md-6 col-lg-6">
-  <a data-toggle="tab" href="#live"><div class="panel panel-success stats">
-    <div class="panel-body">
-      <div id="container3"></div><br>
-      <div id="live-ratio"><span id="percentage"><span id = "liveData"></span></span><br>out of <div class = 'total'></div> total mutations</div>
-    </div>
-  </div></a>
-</div>
-
-
-
-
-
-</div>
-
-
-</div>
-</div>
-
-<!-- TO DO: MAKE CSS STYLING OF FONT COLOR OVERRIDE THE COLORS IN THE FOLLOWING CODE -->
-<div class = "col-xs-12 col-md-4 col-lg-4">
-  <ul class="nav nav-tabs">
-    <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 90px">All</a></li>
-    <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 90px">Killed</a></li>
-    <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 90px">Live</a></li>
-    <li><a data-toggle="tab" href="#uncovered" style="background-color: #d3d3d3; width: 100px">Uncovered</a></li>
-  </ul>
-
-  <div class = "programs-list">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="tab-content">
-
-
-
-          <div id="all"  class="tab-pane fade in active" >
-
-            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
-              <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
-            </ul>
-          </div>
-
-          <div id="killed" class="tab-pane fade in">
-            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
-              <li class="active"><a data-toggle="pill" href="#3">Mutant #26</a></li>
-              <li><a data-toggle="pill" href="#1">Placeholder</a></li>
-            </ul>
-          </div>
-
-          <div id="live" class="tab-pane fade in">
-            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
-              <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
-            </ul>
-          </div>
-
-
-          <div id="uncovered" class="tab-pane fade in">
-            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
-              <li class="active"><a data-toggle="pill" href="#1">Mutant #42</a></li>
-            </ul>
+        <!-- Modal screen displaying test run status -->
+        <div class = "test">
+          <div id="myModal" class="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  Test run complete<br><br>
+                  <button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">View Results</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div></div>
+
+        <!-- BEGIN LEFT PANEL -->
+        <div class = "left-wrapper"><center>
+
+          <!-- "Run test" button -->
+          <button data-toggle="modal" href="#myModal"  type="button" class="btn btn-lg button">Run test</button><br><br>
+
+          <!-- Covered stats and runtime stats panel (orange) -->
+          <div class = "row">
+            <div class = "col-xs-12 col-md-12 col-lg-12">
+              <a data-toggle="tab" href="#uncovered"><div class="panel panel-danger stats">
+                <div class="panel-body">
+                  <div class = "row">
+                    <div class = "col-xs-6 col-md-6 col-lg-6">
+                      <div id="container1"></div>
+                    </div>
+                    <div class = "col-xs-6 col-md-6 col-lg-6">
+                      <div id="covered-ratio"><span id="percentage"><span id = "coveredData"></span></span><br>out of   <div class = "total"> </div> total mutations</div>
+                      <table>
+                        <tr>
+                          <td>Preprocessing time:</td><td><span id = "runtimePrep"></span> seconds</td>
+                        </tr>
+                        <tr>
+                          <td>Analysis Time:</td><td><span id = "runtimeAnalysis"></span> seconds</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </a></div>
+            </div>
+          </div>
+
+          <!-- Live & Killed stats panels (red and green) -->
+          <div class = "row">
+
+            <div class = "col-xs-12 col-md-6 col-lg-6">
+              <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats">
+                <div class="panel-body">
+                  <div id="container2"></div><br>
+                  <div id="killed-ratio"><span id="percentage"><span id = "killedData"></span></span><br>
+                    out of <div class = "total"></div> total mutations
+                  </div>
+                </div>
+              </div></a>
+            </div>
+
+          <div class = "col-xs-12 col-md-6 col-lg-6">
+            <a data-toggle="tab" href="#live"><div class="panel panel-success stats">
+              <div class="panel-body">
+                <div id="container3"></div><br>
+                <div id="live-ratio"><span id="percentage"><span id = "liveData"></span></span><br>out of <div class = 'total'></div> total mutations</div>
+              </div>
+            </div></a>
+          </div>
+        </div>
+      </div>
     </div>
 
+
+<!-- BEGIN MIDDLE PANEL -->
+
+  <!-- Tabs -->
+  <div class = "col-xs-12 col-md-4 col-lg-4">
+    <ul class="nav nav-tabs">
+      <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 90px">All</a></li>
+      <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 90px">Killed</a></li>
+      <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 90px">Live</a></li>
+      <li><a data-toggle="tab" href="#uncovered" style="background-color: #d3d3d3; width: 100px">Uncovered</a></li>
+    </ul>
+
+    <!-- Tab content with programs list -->
+    <div class = "programs-list">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="tab-content">
+
+            <!-- All mutants -->
+            <div id="all"  class="tab-pane fade in active" >
+              <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
+                <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
+              </ul>
+            </div>
+
+            <!-- Killed mutants -->
+            <div id="killed" class="tab-pane fade in">
+              <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
+                <li class="active"><a data-toggle="pill" href="#3">Mutant #26</a></li>
+                <li><a data-toggle="pill" href="#1">Placeholder</a></li>
+              </ul>
+            </div>
+
+            <!-- Live mutants -->
+            <div id="live" class="tab-pane fade in">
+              <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
+                <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
+              </ul>
+            </div>
+
+            <!-- Uncovered mutants -->
+            <div id="uncovered" class="tab-pane fade in">
+              <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
+                <li class="active"><a data-toggle="pill" href="#1">Mutant #42</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unkillable panel (bottom middle panel) -->
     <div class="panel panel-danger programs-list unkillable" >
       <div class="panel-heading" >Unkillable</div>
-      <div class="panel-body ">
-        <i>Drag and drop unkillable program names from the list above</i>
-
-        <ul class="nav nav-pills nav-stacked droptrue" id="sortable2" >
-
-        </ul>
-      </div>
+        <div class="panel-body ">
+          <i>Drag and drop unkillable program names from the list above</i>
+          <ul class="nav nav-pills nav-stacked droptrue" id="sortable2"></ul>
+        </div>
     </div>
 
     <div class = "summary">
       <div id="summaryModal" class="modal">
-      <div class="modal-dialog">
-      <div class="modal-content">
-      <div class="modal-body">
-      Summary of Mutation Data<br>
-      <br>
-      <table>
-      <tr id = "headers">
-      <td>All</td><td>Live</td><td>Killed</td><td>Uncovered</td>
-      </tr>
-      <tr>
-      <td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
-      </tr>
-      <td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
-      </tr><td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
-      </tr><td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
-      </tr>
-      <tr>
-      <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
-      </tr>
-      </table>
-      <button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">Close</button>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+        Summary of Mutation Data<br>
+        <br>
+        <table>
+        <tr id = "headers">
+        <td>All</td><td>Live</td><td>Killed</td><td>Uncovered</td>
+        </tr>
+        <tr>
+        <td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
+        </tr>
+        <td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
+        </tr><td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
+        </tr><td>Mutant #1</td><td>Mutant #4</td><td>Mutant #7</td><td>Mutant #10</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #2</td><td>Mutant #5</td><td>Mutant #8</td><td>Mutant #11</td><td></td>
+        </tr>
+        <tr>
+        <td>Mutant #3</td><td>Mutant #6</td><td>Mutant #9</td><td>Mutant #12</td><td></td>
+        </tr>
+        </table>
+        <button type="button" class="btn btn-xs" data-dismiss="modal" aria-hidden="true">Close</button>
 
+        </div>
+        </div>
+        </div>
+        </div>
+          <a data-toggle="modal" href="#summaryModal"> View Summary </button><br><br>
       </div>
+
+    </div>
+
+
+  <!-- BEGIN RIGHT PANEL -->
+    <div class = "col-xs-12 col-md-4 col-lg-4">
+      <div class="panel panel-info ">
+        <div class="panel-heading">Mutant Viewer</div>
+        <div class="panel-body program-viewer">
+          <div id="panel">
+            <div class="tab-content" id = "diff"></div>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-        <a data-toggle="modal" href="#summaryModal"> View Summary </button><br><br>
-      </div>
+    </div>
 
-  </div>
+  </div> <!--end row-->
+</div><!-- end dashboard content -->
 
-
-
-
-  <div class = "col-xs-12 col-md-4 col-lg-4">
-    <div class="panel panel-info ">
-      <div class="panel-heading">Mutant Viewer</div>
-      <div class="panel-body program-viewer">
-        <div id="panel">
-
-          <div class="tab-content" id = "diff">
-          <!--  <div id="1" class="tab-pane fade in active">
-              <div class = "class-info">
-                Package: <u>example</u><br>
-                Class: <u>FindTheMutation.java</u><br><br>
-              </div>
-
-              public class FindTheMutation{ <br>
-                                    <br>
-                                  &nbsp;public static void main(String[] args){<br>
-                                    <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
-                                    <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br></div>
-                                    <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Dave");<br></div>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
-                                    <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
-                                    <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
-                                    <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;else{<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                    <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;while(true){<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                  &nbsp;}<br>
-                                        </div>
-                                        <div id="2" class="tab-pane fade">
-                                          <div class = "class-info">
-                                            Package: <u>example</u><br>
-                                            Class: <u>FindTheMutation.java</u><br><br>
-                                          </div>
-
-                                          public class FindTheMutation{ <br><br>
-                                            &nbsp;&nbsp;public static void main(String[] args){<br><br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
-                                              <br>
-                                              <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br></div>
-                                              <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = true;<br></div>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
-                                              <br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
-                                              <br>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{<br>
-                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
-                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                  <br>
-                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(true){<br>
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                    &nbsp;&nbsp;}<br>
-                                                  }
-                                                </div>
-                                                <div id="3" class="tab-pane fade">
-                                                  <div class = "class-info">
-                                                    Package: <u>example</u><br>
-                                                    Class: <u>FindTheMutation.java</u><br><br>
-                                                  </div>
-                                                  public class FindTheMutation{ <br><br>
-                                                    &nbsp;&nbsp;public static void main(String[] args){<br><br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Contributors:");<br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("David Whitaker");<br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Jake Bernstein");<br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thomas Hegarty");<br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Lisa Iudiciani");<br>
-                                                      <br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean codeIsMutated = false;<br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String yes = "yes";<br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String no = "no";<br>
-                                                      <br>
-                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Am I a mutant?");<br>
-                                                      <br>
-                                                      <div id = "red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == true){<br></div>
-                                                        <div id = "green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(codeIsMutated == false){<br></div>
-                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(yes);<br>
-                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else{<br>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println(no);<br>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                            <br>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Does this project deserve an A?");<br>
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(true){<br>
-                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System.out.println("Duh");<br>
-                                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                              &nbsp;&nbsp;}<br>
-                                                            }
-                                                          </div>-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-
-                                                </div>
-
-
-
-
-                                              </div> <!--end row-->
-                                            </div>
-                                            </body>
-                                            </html>
+</body>
+</html>
