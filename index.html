@@ -145,10 +145,7 @@
 
 
   <script src="data.js"></script>
-
   <script>
-
-
     var livePercentage = data.mutantsLive/data.mutantsTotal;
     var killedPercentage = data.mutantsKilled/data.mutantsTotal;
     var coveredPercentage = data.mutantsCovered/data.mutantsTotal;
@@ -158,9 +155,9 @@
       for(var i = 0, length = totals.length; i < length; i++) {
         totals[i].innerHTML = data.mutantsTotal;
       }
-      document.getElementById('covered').innerHTML = data.mutantsCovered;
-      document.getElementById('killed').innerHTML = data.mutantsKilled;
-      document.getElementById('live').innerHTML = data.mutantsLive;
+      document.getElementById('coveredData').innerHTML = data.mutantsCovered;
+      document.getElementById('killedData').innerHTML = data.mutantsKilled;
+      document.getElementById('liveData').innerHTML = data.mutantsLive;
       document.getElementById('runtimePrep').innerHTML = data.runtimePrep;
       document.getElementById('runtimeAnalysis').innerHTML = data.runtimeAnalysis;
     });
@@ -244,7 +241,7 @@ Test run complete<br>
             <div id="container1"></div>
           </div>
           <div class = "col-xs-6 col-md-6 col-lg-6">
-            <div id="covered-ratio"><span id="percentage"><span id = "covered"></span></span><br>out of   <div class = "total"> </div> total mutations</div>
+            <div id="covered-ratio"><span id="percentage"><span id = "coveredData"></span></span><br>out of   <div class = "total"> </div> total mutations</div>
             <table>
             <tr>
             <td>Preprocessing time:</td><td><span id = "runtimePrep"></span> seconds</td>
@@ -273,7 +270,7 @@ Test run complete<br>
   <a data-toggle="tab" href="#killed"><div class="panel panel-danger stats">
     <div class="panel-body">
       <div id="container2"></div><br>
-      <div id="killed-ratio"><span id="percentage">  <span id = "killed"></span>
+      <div id="killed-ratio"><span id="percentage">  <span id = "killedData"></span>
       </span><br>out of <div class = "total"></div> total mutations</div>
     </div>
   </div></a>
@@ -283,7 +280,7 @@ Test run complete<br>
   <a data-toggle="tab" href="#live"><div class="panel panel-success stats">
     <div class="panel-body">
       <div id="container3"></div><br>
-      <div id="live-ratio"><span id="percentage"><span id = "live"></span></span><br>out of <div class = 'total'></div> total mutations</div>
+      <div id="live-ratio"><span id="percentage"><span id = "liveData"></span></span><br>out of <div class = 'total'></div> total mutations</div>
     </div>
   </div></a>
 </div>

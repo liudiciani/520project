@@ -1,5 +1,5 @@
 var data = {
-    mutantsTotal: "50",
+    mutantsTotal:"50",
     mutantsCovered: "30",
     mutantsKilled: "20",
     mutantsLive: "10",
