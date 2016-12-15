@@ -68,7 +68,7 @@
     });
     bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
     bar.text.style.fontSize = '30px';
-    bar.animate(0.6);  // Number from 0.0 to 1.0
+    bar.animate(coveredPercentage);  // Number from 0.0 to 1.0
   });
   </script>
 
@@ -103,7 +103,7 @@
     });
     bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
     bar.text.style.fontSize = '30px ';
-    bar.animate(0.4);  // Number from 0.0 to 1.0
+    bar.animate(killedPercentage);  // Number from 0.0 to 1.0
   });
   </script>
 
@@ -137,57 +137,22 @@
     });
     bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
     bar.text.style.fontSize = '30px ';
-    bar.animate(0.2);  // Number from 0.0 to 1.0
+    bar.animate(livePercentage);  // Number from 0.0 to 1.0
   });
   </script>
 
-  <!--<script src="//code.jquery.com/jquery.min.js"></script>-->
-  <script src="radial-progress-bar.js"></script>
-<script>
-  $(function(){
-    var clock = jQuery("#container").radialMultiProgress("init", {
-  'fill': 100,
-  'font-size': 0,
-  'data': [
-    {'color': "#9bf198", 'range': [0, 50]},
-    {'color': "#ff7f7f", 'range': [0, 50]},
-    {'color': "#ffb481", 'range': [0, 50]},
-    {'color': "#e1bfff", 'range':[0, 50]}
-  ]
-});
-
-var startClock = function() {
-  var dh, dm, ds, dt;
-  setInterval(function() {
-    var date = new Date(),
-        h = 1,
-        m = 1,
-        s = 1,
-        t = 1
-    if (dh == dh) { clock.radialMultiProgress("to", {
-      "index": 0, 'perc': 10, 'time': 100
-    }); dh = h; }
-    if (dm == dm) { clock.radialMultiProgress("to", {
-      "index": 1, 'perc': 20, 'time': 100
-    }); dm = m; }
-    if (ds == ds) { clock.radialMultiProgress("to", {
-      "index": 2, 'perc': 30, 'time': 100
-    }); ds = s; }
-    if (dt == dt) { clock.radialMultiProgress("to", {
-      "index": 3, 'perc': 50, 'time': 100
-    }); dt = t; }
-  }, 1000);
-};
-
-startClock();
-});
-</script>
 
 
 
   <script src="data.js"></script>
 
   <script>
+
+
+    var livePercentage = data.mutantsLive/data.mutantsTotal;
+    var killedPercentage = data.mutantsKilled/data.mutantsTotal;
+    var coveredPercentage = data.mutantsCovered/data.mutantsTotal;
+
     window.onload = (function() {
       var totals = document.getElementsByClassName('total');
       for(var i = 0, length = totals.length; i < length; i++) {
