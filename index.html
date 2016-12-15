@@ -182,7 +182,16 @@
         d.innerHTML = k.mutation;
         document.getElementById('diff').appendChild(d);
 
-      $('#20').append("<span id='green'>" + k.mutation + "</span><br>")
+
+        /*
+        THE FOLLOWING METHOD HEADER REFERS TO A PROGRAM
+        THAT, GIVEN THE ORIGINAL SOURCE CODE, LINE NUMBER
+        OF THE MUTATION, AND MUTATED LINE OF CODE,
+        WILL CREATE THE DIFF VIEW PRESENTED IN THE UI.
+        */
+        var original = "filename.java";
+        var line = k.line;
+        var mutation = k.mutation;
 
       //add pills
         $("#killed ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
@@ -469,7 +478,7 @@
         </div>
         </div>
         </div>
-          <a data-toggle="modal" href="#summaryModal"> View Summary </button><br><br>
+          <a data-toggle="modal" href="#summaryModal"> View Summary </a><br><br>
       </div>
 
     </div>
@@ -482,60 +491,8 @@
         <div class="panel-body mutant-viewer">
           <div id="panel">
             <div class="tab-content" id = "diff">
-              package triangle;<br>
-1&nbsp;&nbsp;              /**<br />
-2&nbsp;&nbsp;                * An implementation that classifies triangles.<br />
-3&nbsp;&nbsp;                */<br />
-4&nbsp;&nbsp;                  public class Triangle {<br />
-5&nbsp;&nbsp;               /**<br />
-6&nbsp;&nbsp;                * This enum gives the type of the triangle.<br />
-7&nbsp;&nbsp;                */<br />
-8&nbsp;&nbsp;                public static enum Type {<br />
-9&nbsp;&nbsp;                  <br />
-10&nbsp;&nbsp;                  INVALID, SCALENE, EQUILATERAL, ISOSCELES<br>
-11&nbsp;&nbsp;                  <br />
-12&nbsp;&nbsp;                }; <br />
-13&nbsp;&nbsp;                <br />
-14&nbsp;&nbsp;                /** <br />
-15&nbsp;&nbsp;                <br />
-16&nbsp;&nbsp;                * This static method does the actual classification of a triangle<br />
-17&nbsp;&nbsp;                * of its three sides.<br />
-18&nbsp;&nbsp;                 */<br />
-19&nbsp;&nbsp;                 public static Type classify(int a, int b, int c) {<br />
-20&nbsp;&nbsp;                   <span id = "20">if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) {<br /></span>
-21&nbsp;&nbsp;                    return Type.INVALID;<br />
-22&nbsp;&nbsp;                   }<br />
-23&nbsp;&nbsp;                   int trian = 0;<br />
-24&nbsp;&nbsp;                   if (a == b) {<br />
-25&nbsp;&nbsp;                     trian = trian + 1;<br />
-26&nbsp;&nbsp;                    }<br />
-27&nbsp;&nbsp;                    if (a == c) {<br />
-28&nbsp;&nbsp;                      trian = trian + 2;<br />
-29&nbsp;&nbsp;                      }<br />
-30&nbsp;&nbsp;                       if (b == c) {<br />
-31&nbsp;&nbsp;                          trian = trian + 3;<br />
-32&nbsp;&nbsp;                         }<br />
-33&nbsp;&nbsp;                        if (trian == 0) {<br />
-34&nbsp;&nbsp;                            if (a + b &lt;= c || a + c &lt;= b || b + c &lt;= a) {<br />
-35&nbsp;&nbsp;                               return Type.INVALID;<br />
-36&nbsp;&nbsp;                             } else {<br />
-37&nbsp;&nbsp;                               return Type.SCALENE;<br />
-38&nbsp;&nbsp;                             }<br />
-39&nbsp;&nbsp;                          }<br />
-40&nbsp;&nbsp;                           if (trian &gt; 3) {<br />
-41&nbsp;&nbsp;                              return Type.EQUILATERAL;<br />
-42&nbsp;&nbsp;                            }<br />
-43&nbsp;&nbsp;                            if (trian == 1 &amp;&amp; a + b &gt; c) {<br />
-44&nbsp;&nbsp;                               return Type.ISOSCELES;<br />
-45&nbsp;&nbsp;                             } else if (trian == 2 &amp;&amp; a + c &gt; b) {<br />
-46&nbsp;&nbsp;                                return Type.ISOSCELES;<br />
-47&nbsp;&nbsp;                                } <br />
-48&nbsp;&nbsp;                                   else if (trian == 3 &amp;&amp; b + c &gt; a) {<br />
-49&nbsp;&nbsp;                                   return Type.ISOSCELES;<br />
-50&nbsp;&nbsp;                                 }<br />
-51&nbsp;&nbsp;                                                    return Type.INVALID;<br />
-52&nbsp;&nbsp;                                }<br />
-53&nbsp;&nbsp;                              }<br>
+              <!--<img src="example.PNG"></img>-->
+
              </div>
             </div>
           </div>
