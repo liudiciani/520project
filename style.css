@@ -111,8 +111,8 @@ a{
    background-color: #ff7f7f;
       color: black;
 }
-#covered .nav-pills > li.active > a {
-    background-color: #ffb481;
+#uncovered .nav-pills > li.active > a {
+    background-color: gray;
       color: black;
 }
 

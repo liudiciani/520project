@@ -171,37 +171,51 @@
 
     /*************************  MUTANTS ************************/
 
-  /*  <div id="killed" class="tab-pane fade in">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a data-toggle="pill" href="#3">Mutant #26</a></li>
-        <li><a data-toggle="pill" href="#1">Placeholder</a></li>
-      </ul>
-    </div>
-
-
-    <div class="tab-content pics">
-      <div id="1" class="tab-pane fade in active">
-
-
-      */
 
 
     window.onload = (function() {
     for(var k of killedMutants){
       //add to program viewer
-            var d = document.createElement("div");
-            d.setAttribute("id", "mutant"+k.num);
-            d.setAttribute("class", "tab-pane fade in");
-            d.innerHTML = k.mutation;
-            document.getElementById('diff').appendChild(d);
+      var d = document.createElement("div");
+      d.setAttribute("id", "mutant"+k.num);
+      d.setAttribute("class", "tab-pane fade in");
+      d.innerHTML = k.mutation;
+      document.getElementById('diff').appendChild(d);
 
-
-      //document.getElementById('diff').append("<div id='hi' class='tab-pane fade in active'>IT WORKS</div>");
-      //add pill
+    //add pill
       $("#killed ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
+      $("#all ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
+    }
+
+    for(var l of liveMutants){
+      //add to program viewer
+      var d = document.createElement("div");
+      d.setAttribute("id", "mutant"+l.num);
+      d.setAttribute("class", "tab-pane fade in");
+      d.innerHTML = l.mutation;
+      document.getElementById('diff').appendChild(d);
+
+    //add pill
+      $("#live ul").append("<li><a data-toggle='pill' href='#mutant" + l.num + "'>" + l.num + "</a></li>");
+      $("#all ul").append("<li><a data-toggle='pill' href='#mutant" +l.num + "'>" + l.num + "</a></li>");
+    }
+
+    for(var u of uncoveredMutants){
+      //add to program viewer
+      var d = document.createElement("div");
+      d.setAttribute("id", "mutant"+u.num);
+      d.setAttribute("class", "tab-pane fade in");
+      d.innerHTML = u.mutation;
+      document.getElementById('diff').appendChild(d);
+
+    //add pill
+      $("#uncovered ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
+      $("#all ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
     }
 
     });
+
+
 
 
 
@@ -329,7 +343,7 @@ Test run complete<br>
     <li><a data-toggle="tab" href="#all" style="background-color: #e1bfff; width: 90px">All</a></li>
     <li><a data-toggle="tab" href="#killed" style="background-color: #ff7f7f; width: 90px">Killed</a></li>
     <li><a data-toggle="tab" href="#live" style="background-color: #9bf198; width: 90px">Live</a></li>
-    <li><a data-toggle="tab" href="#covered" style="background-color: #d3d3d3; width: 100px">Uncovered</a></li>
+    <li><a data-toggle="tab" href="#uncovered" style="background-color: #d3d3d3; width: 100px">Uncovered</a></li>
   </ul>
 
   <div class = "programs-list">
@@ -343,108 +357,26 @@ Test run complete<br>
 
             <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
               <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #2</a></li>
-              <li><a id = "drag2" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Mutant #3</a></li>
-              <li><a id = "drag3" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Mutant #4</a></li>
-              <li><a id = "drag4" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Mutant #5</a></li>
-              <li><a id = "drag5" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Mutant #6</a></li>
-              <li><a id = "drag6" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#2">Mutant #7</a></li>
-              <li><a id = "drag7" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#3">Mutant #8</a></li>
-              <li><a id = "drag8" draggable="true" ondragstart="drag(event)" data-toggle="pill" href="#1">Mutant #9</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #10</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #11</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #12</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #13</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #14</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #15</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #16</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #17</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #18</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #19</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #20</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #21</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #22</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #23</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #24</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #25</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #26</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #27</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #28</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #29</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #30</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #31</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #32</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #33</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #34</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #35</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #36</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #37</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #38</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #39</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #40</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #41</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #42</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #43</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #44</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #45</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #46</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #47</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #48</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #49</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #50</a></li>
-
             </ul>
           </div>
 
           <div id="killed" class="tab-pane fade in">
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
               <li class="active"><a data-toggle="pill" href="#3">Mutant #26</a></li>
               <li><a data-toggle="pill" href="#1">Placeholder</a></li>
             </ul>
           </div>
 
           <div id="live" class="tab-pane fade in">
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
               <li class="active"><a data-toggle="pill" href="#1">Mutant #1</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #2</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #3</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #4</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #5</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #6</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #7</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #8</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #9</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #10</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #11</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #12</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #13</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #14</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #15</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #16</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #17</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #18</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #19</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #20</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #21</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #22</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #23</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #24</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #25</a></li>
             </ul>
           </div>
 
 
-          <div id="covered" class="tab-pane fade in">
-            <ul class="nav nav-pills nav-stacked">
-              <li class="active"><a data-toggle="pill" &nbsp;&nbsp;ef="#1">Mutant #42</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #43</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #44</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #45</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #46</a></li>
-              <li><a data-toggle="pill" href="#1">Mutant #47</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #48</a></li>
-              <li><a data-toggle="pill" href="#3">Mutant #49</a></li>
-              <li><a data-toggle="pill" href="#2">Mutant #50</a></li>
+          <div id="uncovered" class="tab-pane fade in">
+            <ul class="nav nav-pills nav-stacked droptrue" id="sortable1">
+              <li class="active"><a data-toggle="pill" href="#1">Mutant #42</a></li>
             </ul>
           </div>
         </div>
