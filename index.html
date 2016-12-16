@@ -195,7 +195,7 @@ mutants.js file.-->
         var d = document.createElement("div");
         d.setAttribute("id", "mutant"+k.num);
         d.setAttribute("class", "tab-pane fade in");
-      //  d.innerHTML = k.mutation;
+        d.innerHTML = k.mutation;
 
         document.getElementById('diff').appendChild(d);
 
@@ -219,7 +219,9 @@ mutants.js file.-->
 
 
         var diffHTML = generateDiff(original, mutation, line);
-        d.innerHTML = diffHTML;
+        if(diffHTML != undefined){
+          d.innerHTML = diffHTML;
+        }
 
 
       //add pills
@@ -233,7 +235,7 @@ mutants.js file.-->
         var d = document.createElement("div");
         d.setAttribute("id", "mutant"+l.num);
         d.setAttribute("class", "tab-pane fade in");
-      //  d.innerHTML = l.mutation;
+        d.innerHTML = l.mutation;
         document.getElementById('diff').appendChild(d);
 
         var original = "filename.java";
@@ -254,9 +256,11 @@ mutants.js file.-->
         function generateDiff(original, mutation, line) {
         }
 
-
         var diffHTML = generateDiff(original, mutation, line);
-        d.innerHTML = diffHTML;
+        if(diffHTML != undefined){
+          d.innerHTML = diffHTML;
+        }
+
 
       //add pills
         $("#live ul").append("<li><a data-toggle='pill' href='#mutant" + l.num + "'>" + l.num + "</a></li>");
@@ -269,7 +273,7 @@ mutants.js file.-->
         var d = document.createElement("div");
         d.setAttribute("id", "mutant"+u.num);
         d.setAttribute("class", "tab-pane fade in");
-        // d.innerHTML = u.mutation;
+        d.innerHTML = u.mutation;
         document.getElementById('diff').appendChild(d);
 
         var original = "filename.java";
@@ -290,9 +294,12 @@ mutants.js file.-->
         function generateDiff(original, mutation, line) {
         }
 
-
         var diffHTML = generateDiff(original, mutation, line);
-        d.innerHTML = diffHTML;
+        if(diffHTML != undefined){
+          d.innerHTML = diffHTML;
+        }
+
+
 
       //add pills
         $("#uncovered ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
