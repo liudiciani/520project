@@ -20,7 +20,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
+  $(function sort() {
     $( "ul.droptrue" ).sortable({
       connectWith: "ul",
       dropOnEmpty: true
@@ -34,17 +34,31 @@
   } );
   </script>
 
+  <!--...............................................................-->
+  <!--.......................RUN TEST BUTTON.........................-->
+  <!--...............................................................-->
+
+  <script src = "runtest.js"></script>
+
+  <script>
+  $(function runtest() {
+  });
+  </script>
+
 
 <!--...............................................................-->
 <!--.......................PROGRESS CIRCLES........................-->
 <!--...............................................................-->
+<!--These functions create the progress circles on the left side
+panel. The data for these cirles is dynamically loaded from the
+mutants.js file.-->
 
 
   <link rel="stylesheet" href="style.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
   <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
   <script>
-  $( function() {
+  $(function createUncoveredProgressCircle() {
     var bar = new ProgressBar.Circle(container1, {
       color: '#ffb481',
       strokeWidth: 4,
@@ -79,7 +93,7 @@
 
 
   <script>
-  $( function() {
+  $(function createKilledProgressCircle() {
     var bar = new ProgressBar.Circle(container2, {
       color: '#ff7f7f',
       strokeWidth: 4,
@@ -113,7 +127,7 @@
   </script>
 
   <script>
-  $( function() {
+  $(function createLiveProgressCircle() {
     var bar = new ProgressBar.Circle(container3, {
       color: '#9bf198',
       strokeWidth: 4,
@@ -151,8 +165,9 @@
   <!--.......................DYNAMIC DATA............................-->
   <!--...............................................................-->
 
-  <script src="runtimeData.js"></script>
+  <script src="runtime.js"></script>
   <script src="mutants.js"></script>
+  <script src="diffviewer.js"></script>
 
   <script>
   /*************************  RUNTIME DATA  ************************/
@@ -179,19 +194,32 @@
         var d = document.createElement("div");
         d.setAttribute("id", "mutant"+k.num);
         d.setAttribute("class", "tab-pane fade in");
-        d.innerHTML = k.mutation;
+      //  d.innerHTML = k.mutation;
+
         document.getElementById('diff').appendChild(d);
 
-
-        /*
-        THE FOLLOWING METHOD HEADER REFERS TO A PROGRAM
-        THAT, GIVEN THE ORIGINAL SOURCE CODE, LINE NUMBER
-        OF THE MUTATION, AND MUTATED LINE OF CODE,
-        WILL CREATE THE DIFF VIEW PRESENTED IN THE UI.
-        */
         var original = "filename.java";
         var line = k.line;
         var mutation = k.mutation;
+
+        /*
+        THE FOLLOWING FUNCTION REFERS TO A PROGRAM
+        THAT, GIVEN THE ORIGINAL SOURCE CODE, LINE NUMBER
+        OF THE MUTATION, AND MUTATED LINE OF CODE,
+        WILL CREATE THE DIFF VIEW PRESENTED IN THE UI.
+        THIS FUNCTION SHOULD BE IMPLEMENTED IN A SEPARATE
+        FILE ENTITLED diffViewer.js TO OVERRIDE THE
+        EMPTY FUNCTION BELOW. IT SHOULD RETURN HTML TO
+        BE INJECTED INTO THE MUTANT VIEWER PANEL.
+        */
+
+        function generateDiff(original, mutation, line) {
+        }
+
+
+        var diffHTML = generateDiff(original, mutation, line);
+        d.innerHTML = diffHTML;
+
 
       //add pills
         $("#killed ul").append("<li><a data-toggle='pill' href='#mutant" + k.num + "'>" + k.num + "</a></li>");
@@ -204,8 +232,30 @@
         var d = document.createElement("div");
         d.setAttribute("id", "mutant"+l.num);
         d.setAttribute("class", "tab-pane fade in");
-        d.innerHTML = l.mutation;
+      //  d.innerHTML = l.mutation;
         document.getElementById('diff').appendChild(d);
+
+        var original = "filename.java";
+        var line = l.line;
+        var mutation = l.mutation;
+
+        /*
+        THE FOLLOWING FUNCTION REFERS TO A PROGRAM
+        THAT, GIVEN THE ORIGINAL SOURCE CODE, LINE NUMBER
+        OF THE MUTATION, AND MUTATED LINE OF CODE,
+        WILL CREATE THE DIFF VIEW PRESENTED IN THE UI.
+        THIS FUNCTION SHOULD BE IMPLEMENTED IN A SEPARATE
+        FILE ENTITLED diffViewer.js THAT OVERRIDES THE
+        EMPTY FUNCTION BELOW. IT SHOULD RETURN HTML TO
+        BE INJECTED INTO THE MUTANT VIEWER PANEL.
+        */
+
+        function generateDiff(original, mutation, line) {
+        }
+
+
+        var diffHTML = generateDiff(original, mutation, line);
+        d.innerHTML = diffHTML;
 
       //add pills
         $("#live ul").append("<li><a data-toggle='pill' href='#mutant" + l.num + "'>" + l.num + "</a></li>");
@@ -218,8 +268,30 @@
         var d = document.createElement("div");
         d.setAttribute("id", "mutant"+u.num);
         d.setAttribute("class", "tab-pane fade in");
-        d.innerHTML = u.mutation;
+        // d.innerHTML = u.mutation;
         document.getElementById('diff').appendChild(d);
+
+        var original = "filename.java";
+        var line = u.line;
+        var mutation = u.mutation;
+
+        /*
+        THE FOLLOWING FUNCTION REFERS TO A PROGRAM
+        THAT, GIVEN THE ORIGINAL SOURCE CODE, LINE NUMBER
+        OF THE MUTATION, AND MUTATED LINE OF CODE,
+        WILL CREATE THE DIFF VIEW PRESENTED IN THE UI.
+        THIS FUNCTION SHOULD BE IMPLEMENTED IN A SEPARATE
+        FILE ENTITLED diffViewer.js THAT OVERRIDES THE
+        EMPTY FUNCTION BELOW. IT SHOULD RETURN HTML TO
+        BE INJECTED INTO THE MUTANT VIEWER PANEL.
+        */
+
+        function generateDiff(original, mutation, line) {
+        }
+
+
+        var diffHTML = generateDiff(original, mutation, line);
+        d.innerHTML = diffHTML;
 
       //add pills
         $("#uncovered ul").append("<li><a data-toggle='pill' href='#mutant" + u.num + "'>" + u.num + "</a></li>");
@@ -228,53 +300,9 @@
     });
 </script>
 
-<!--
-<script src="difflib.js"></script>
-<script src="diffview.js"></script>
-
-  <link rel="stylesheet" href="diffview.css" type="text/css">
-
-<script>
-    function diffUsingJS() {
-      var baseText = "hello";
-      var newText = "hallo";
-    // get the baseText and newText values from the two textboxes, and split them into lines
-    var base = difflib.stringAsLines($(baseText));
-    var newtxt = difflib.stringAsLines($(newText));
-
-    // create a SequenceMatcher instance that diffs the two sets of lines
-    var sm = new difflib.SequenceMatcher(base, newtxt);
-
-    // get the opcodes from the SequenceMatcher instance
-    // opcodes is a list of 3-tuples describing what changes should be made to the base text
-    // in order to yield the new text
-    var opcodes = sm.get_opcodes();
-    var diffoutputdiv = $("diffoutput");
-    while (diffoutputdiv.firstChild) diffoutputdiv.removeChild(diffoutputdiv.firstChild);
-    var contextSize = $("contextSize").value;
-    contextSize = contextSize ? contextSize : null;
-
-    // build the diff view and add it to the current DOM
-    diffoutputdiv.appendChild(diffview.buildView({
-        baseTextLines: base,
-        newTextLines: newtxt,
-        opcodes: opcodes,
-        // set the display titles for each resource
-        baseTextName: "Base Text",
-        newTextName: "New Text",
-        contextSize: contextSize,
-        viewType: $("inline").checked ? 1 : 0
-    }));
-
-    // scroll down to the diff view window.
-    location = url + "#diff";
-}
-
-  </script> -->
 </head>
 
 <body>
-  <!--<div class = "diffoutput"></div>-->
 
 <!-- Top bar displaying packages & filenames -->
   <div class = "top-bar">
@@ -311,7 +339,7 @@
         <div class = "left-wrapper"><center>
 
           <!-- "Run test" button -->
-          <button data-toggle="modal" href="#myModal"  type="button" class="btn btn-lg button">Run test</button><br><br>
+          <button data-toggle="modal" href="#myModal"  onclick="runtest()" type="button" class="btn btn-lg button">Run test</button><br><br>
 
           <!-- Covered stats and runtime stats panel (orange) -->
           <div class = "row">
@@ -491,7 +519,61 @@
         <div class="panel-body mutant-viewer">
           <div id="panel">
             <div class="tab-content" id = "diff">
-              <!--<img src="example.PNG"></img>-->
+              package triangle;<br>
+              1&nbsp;&nbsp;<span id = "1"> /** </span><br />
+              2&nbsp;&nbsp;<span id = "2">* An implementation that classifies triangles.</span><br />
+              3&nbsp;&nbsp;<span id = "3"></span><br />
+              4&nbsp;&nbsp;<span id = "4"> public class Triangle {</span><br />
+              5&nbsp;&nbsp;<span id = "5"> /**</span><br />
+              6&nbsp;&nbsp;<span id = "6"> * This enum gives the type of the triangle.</span><br />
+              7&nbsp;&nbsp;<span id = "7"> */</span><br />
+              8&nbsp;&nbsp;<span id = "8"> public static enum Type {</span><br />
+              9&nbsp;&nbsp;<span id = "9"></span><br />
+              10&nbsp;&nbsp;<span id = "10">INVALID, SCALENE, EQUILATERAL, ISOSCELES</span><br>
+              11&nbsp;&nbsp;<span id = "11"></span><br />
+              12&nbsp;&nbsp; <span id = "12">}; </span><br />
+              13&nbsp;&nbsp;<span id = "13"></span><br />
+              14&nbsp;&nbsp;<span id = "14">/** </span><br />
+              15&nbsp;&nbsp;<span id = "15"></span><br />
+              16&nbsp;&nbsp;<span id = "16">* This static method does the actual classification of a triangle</span><br />
+              17&nbsp;&nbsp;<span id = "17">* of its three sides.</span><br />
+              18&nbsp;&nbsp;<span id = "18">*/</span><br />
+              19&nbsp;&nbsp;<span id = "19">public static Type classify(int a, int b, int c) {</span><br />
+              20&nbsp;&nbsp;<span id = "20">if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) {</span><br />
+              21&nbsp;&nbsp;<span id = "21">return Type.INVALID;</span><br />
+              22&nbsp;&nbsp;<span id = "22">}</span><br />
+              23&nbsp;&nbsp;<span id = "23">int trian = 0;</span><br />
+              <span id = "24" ><div id="red">24&nbsp;&nbsp;if (a == b) {</div></span>
+              <span id = "24" ><div id="green">24&nbsp;&nbsp;if (a != b) {</div></span>
+              25&nbsp;&nbsp;<span id = "25">trian = trian + 1;</span><br />
+              26&nbsp;&nbsp;<span id = "26">}</span><br />
+              27&nbsp;&nbsp;<span id = "27">if (a == c) {</span><br />
+              28&nbsp;&nbsp;<span id = "28">trian = trian + 2;</span><br />
+              29&nbsp;&nbsp;<span id = "29">}</span><br />
+              30&nbsp;&nbsp;<span id = "30">if (b == c) {</span><br />
+              31&nbsp;&nbsp;<span id = "31">trian = trian + 3;</span><br />
+              32&nbsp;&nbsp;<span id = "32">}</span><br />
+              33&nbsp;&nbsp;<span id = "33">if (trian == 0) {</span><br />
+              34&nbsp;&nbsp;<span id = "34">if (a + b &lt;= c || a + c &lt;= b || b + c &lt;= a) {</span><br />
+              35&nbsp;&nbsp;<span id = "35"> return Type.INVALID;</span><br />
+              36&nbsp;&nbsp;<span id = "36">} else {</span><br />
+              37&nbsp;&nbsp;<span id = "37">return Type.SCALENE;</span><br />
+              38&nbsp;&nbsp;<span id = "38">}</span><br />
+              39&nbsp;&nbsp;<span id = "39">}</span><br />
+              40&nbsp;&nbsp;<span id = "40">if (trian &gt; 3) {</span><br />
+              41&nbsp;&nbsp;<span id = "2">return Type.EQUILATERAL;</span><br />
+              42&nbsp;&nbsp;<span id = "2">}</span><br />
+              43&nbsp;&nbsp;<span id = "2">if (trian == 1 &amp;&amp; a + b &gt; c) {</span><br />
+              44&nbsp;&nbsp;<span id = "2">return Type.ISOSCELES;</span><br />
+              45&nbsp;&nbsp;<span id = "2">} else if (trian == 2 &amp;&amp; a + c &gt; b) {</span><br />
+              46&nbsp;&nbsp;<span id = "2">return Type.ISOSCELES;</span><br />
+              47&nbsp;&nbsp;<span id = "2">} </span><br />
+              48&nbsp;&nbsp;<span id = "2">else if (trian == 3 &amp;&amp; b + c &gt; a) {</span><br />
+              49&nbsp;&nbsp;<span id = "2">return Type.ISOSCELES;</span><br />
+              50&nbsp;&nbsp;<span id = "2">}</span><br />
+              51&nbsp;&nbsp;<span id = "2">return Type.INVALID;</span><br />
+              52&nbsp;&nbsp;<span id = "2">}</span><br />
+              53&nbsp;&nbsp;<span id = "2">}<br>
 
              </div>
             </div>
