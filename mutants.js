@@ -1,17 +1,17 @@
 var killedMutants = [
-    {num:"1",line:"10",mutation:"System.out.println('1 works');"},
-    {num:"2",line:"20",mutation:"System.out.println('2 works');"},
-    {num:"3",line:"30",mutation:"System.out.println('3 works');"}
+    {num:"1",line:"24",mutation:"Mutant: if (a != b) {"},
+    {num:"2",line:"27",mutation:"Mutant: if (a != c) {"},
+    {num:"3",line:"30",mutation:"Mutant: if (b != c) {"}
   ]
 
 var liveMutants = [
-    {num:"4",line:"13",mutation:"System.out.println('4 works');"},
-    {num:"5",line:"53",mutation:"System.out.println('5 works');"},
-    {num:"6",line:"24",mutation:"System.out.println('6 works');"}
+    {num:"4",line:"45",mutation:"Mutant: } else if (trian != 2 && a + c > b) {"},
+    {num:"5",line:"45",mutation:"Mutant: } else if (trian == 2 || a + c > b) {"},
+    {num:"6",line:"45",mutation:"Mutant: } else if (trian == 2 && a + c < b) {"}
   ]
 
 var uncoveredMutants = [
-    {num:"7",line:"17",mutation:"System.out.println('7 works');"},
-    {num:"8",line:"28",mutation:"System.out.println('8 works');"},
-    {num:"9",line:"39",mutation:"System.out.println('9 works');"}
+    {num:"7",line:"48",mutation:"Mutant: else if (trian != 3 && a + c > b) {"},
+    {num:"8",line:"48",mutation:"Mutant: else if (trian == 3 || a + c > b) {"},
+    {num:"9",line:"48",mutation:"Mutant: else if (trian == 3 && a + c < b) {"}
   ]
