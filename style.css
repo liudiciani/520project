@@ -53,38 +53,13 @@ a{
 
 }
 
-.summary td{
-  padding-bottom: 10px;
-}
 
 #headers{
   color: white;
 }
 
-
-.summary a{
-  color: white;
-}
-
-.summary a:hover{
-  color: #d3d3d3;
-}
-
-.summary #modal-body{
-  color: #d3d3d3;
-}
-
 .total{
   display: inline;
-}
-
-.summary{
-  text-align: center;
-}
-
-.summary table{
-  width: 100%;
-  color: #d3d3d3;
 }
 
 .unkillable{
